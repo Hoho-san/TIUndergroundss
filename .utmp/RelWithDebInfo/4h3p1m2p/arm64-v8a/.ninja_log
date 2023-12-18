@@ -1,0 +1,21 @@
+# ninja log v5
+95	4627	7224178277004744	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	79b3b62a8eb76c53
+19	5175	7224178277286819	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1c7e05589f6ab10
+4627	6577	7224178302283221	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e7f90b50b4274bd4
+32	5218	7224178280899317	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f4b43d37a9d4108
+79	5217	7224178285830489	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	ecf1cd0cd3efe2f6
+8	5343	7224178289521957	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	1641802c05e86ad0
+5177	5659	7224178293190171	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	7cf2218c9b5b8e9
+5660	7039	7224178305589776	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/arm64-v8a/libswappywrapper.so	89469fadb4e4d72e
+104	5214	7224178280390394	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5beaeeefe4c3a753
+6578	7047	7224178305589776	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/arm64-v8a/libgame.so	809a0eab8e69e70a
+70	3274	7228632923894297	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	79b3b62a8eb76c53
+202	3401	7228632925225667	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	e7f90b50b4274bd4
+36	3657	7228632926667810	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1c7e05589f6ab10
+61	3858	7228632931600941	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	ecf1cd0cd3efe2f6
+3426	3859	7228632932249673	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	7cf2218c9b5b8e9
+45	3871	7228632928130396	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f4b43d37a9d4108
+16	4243	7228632936170084	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	1641802c05e86ad0
+3275	4815	7228632942056792	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5beaeeefe4c3a753
+3859	5344	7228632946109951	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/arm64-v8a/libswappywrapper.so	89469fadb4e4d72e
+4815	5370	7228632946165256	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/arm64-v8a/libgame.so	809a0eab8e69e70a

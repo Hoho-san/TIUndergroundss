@@ -1,0 +1,21 @@
+# ninja log v5
+48	4253	7224178406952436	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f5aeb4cb12c9eca7
+5142	5573	7224178423490536	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/armeabi-v7a/libswappywrapper.so	c16e5270e0fec755
+22	4733	7224178408174840	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	b767748106807c3e
+1	5159	7224178411969881	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	536631e3d33a42eb
+62	5065	7224178410705509	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f1e4d6a1a7ef0270
+35	5134	7224178416671896	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	5ded118abca448c
+4739	5138	7224178419853600	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	77cb260c5a3eb9f5
+14	5158	7224178420144671	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a4ce21467cc44567
+4257	6188	7224178431377570	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f600eba0eb6a0256
+6189	6532	7224178433690127	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/armeabi-v7a/libgame.so	756deb21f0b78142
+37	2574	7228632995927867	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f5aeb4cb12c9eca7
+29	2586	7228632996013040	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	b767748106807c3e
+21	2866	7228632998911270	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	536631e3d33a42eb
+49	2900	7228632997365617	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f1e4d6a1a7ef0270
+2586	2935	7228633001262314	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	77cb260c5a3eb9f5
+13	3244	7228633003229217	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	5ded118abca448c
+6	3364	7228633005028529	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a4ce21467cc44567
+2935	3897	7228633010658633	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/armeabi-v7a/libswappywrapper.so	c16e5270e0fec755
+2575	4145	7228633013402846	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f600eba0eb6a0256
+4145	5827	7228633027952967	D:/Game/hooror/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4h3p1m2p/obj/armeabi-v7a/libgame.so	756deb21f0b78142
