@@ -10,8 +10,26 @@ public class PlayerController : MonoBehaviour
     public PlayerControlMode mode;
 
     // References
+
+    public CharacterController characterController;
+
+    [Header("Gravity & Jumping")]
+    public float stickToGroundForce = 10;
+    public float gravity = 10;
+
+    private float verticalVelocity;
+
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public LayerMask groundLayers;
+    public float groundCheckRadius;
+
+    public bool grounded;
+
+
+
     [Space(20)]
-    [SerializeField] private CharacterController characterController;
+    //[SerializeField] private CharacterController characterController;
     [Header("First person camera")]
     [SerializeField] private Transform fpCameraTransform;
     [Header("Third person camera")]
@@ -91,7 +109,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate()
+
     {
+        grounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayers);
         if (mode == PlayerControlMode.ThirdPerson) MoveCamera();
     }
 
@@ -223,6 +243,20 @@ public class PlayerController : MonoBehaviour
         Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
         // Move relatively to the local transform's direction
         characterController.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
+
+        //Calculate y (vertical) movement
+        if (grounded && verticalVelocity <=0)
+        {
+            verticalVelocity = -stickToGroundForce * Time.deltaTime;
+        }
+        else
+        {
+            verticalVelocity -= gravity * Time.deltaTime;
+        }
+
+        //Apply y (vertical) movement
+        Vector3 verticalMovement = transform.up * verticalVelocity;
+        characterController.Move(verticalMovement * Time.deltaTime);    
     }
     
     public void ResetInput(){

@@ -1,12 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerController;
 
 public class FirstPersonController : MonoBehaviour
 {
     // References
+
+    public CharacterController characterController;
+
+    [Header("Gravity & Jumping")]
+    public float stickToGroundForce = 10;
+    public float gravity = 10;
+
+    private float verticalVelocity;
+
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public LayerMask groundLayers;
+    public float groundCheckRadius;
+
+    public bool grounded;
+
+
+
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private CharacterController characterController;
+  //  [SerializeField] private CharacterController characterController;
 
     // Player settings
     [SerializeField] private float cameraSensitivity;
@@ -45,7 +64,7 @@ public class FirstPersonController : MonoBehaviour
         // Handles input
         GetTouchInput();
 
-
+     
         if (rightFingerId != -1) {
             // Ony look around if the right finger is being tracked
             Debug.Log("Rotating");
@@ -129,6 +148,14 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+
+    {
+        grounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayers);
+       
+    }
+
+
     void LookAround() {
 
         // vertical (pitch) rotation
@@ -141,6 +168,8 @@ public class FirstPersonController : MonoBehaviour
 
     void Move() {
 
+     //   grounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayers);
+
         // Don't move if the touch delta is shorter than the designated dead zone
         if (moveInput.sqrMagnitude <= moveInputDeadZone) return;
 
@@ -148,6 +177,21 @@ public class FirstPersonController : MonoBehaviour
         Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
         // Move relatively to the local transform's direction
         characterController.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
+
+
+        //Calculate y (vertical) movement
+        if (grounded && verticalVelocity <= 0)
+        {
+            verticalVelocity = -stickToGroundForce * Time.deltaTime;
+        }
+        else
+        {
+            verticalVelocity -= gravity * Time.deltaTime;
+        }
+
+        //Apply y (vertical) movement
+        Vector3 verticalMovement = transform.up * verticalVelocity;
+        characterController.Move(verticalMovement * Time.deltaTime);
     }
 
 }
