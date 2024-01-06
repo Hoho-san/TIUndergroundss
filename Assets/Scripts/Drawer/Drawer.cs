@@ -19,9 +19,7 @@ public class Drawer : MonoBehaviour
     private void Start()
     {
         isReach = false;
-      
         drawerIsOpen = false;
-
         drawer = GetComponent<Animator>();
     }
 
