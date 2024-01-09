@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5b35b3c7cb619094484655b0b131ace0
   - enabled: 1
-    path: Assets/Scenes/Escape.unity
+    path: Assets/Scenes/Level1.unity
     guid: 76fffdc107b8eae41bfa80374f855424
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
