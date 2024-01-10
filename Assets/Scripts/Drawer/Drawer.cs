@@ -16,6 +16,9 @@ public class Drawer : MonoBehaviour
     
     private Animator drawer;
 
+    public GameObject pickKeyButton;
+    public PickKey pickKeyScript; // Reference to the PickKey script
+
     private void Start()
     {
         isReach = false;
@@ -25,12 +28,24 @@ public class Drawer : MonoBehaviour
 
     private void Update()
     {
-      
-        if (isReach && drawerIsOpen)
+        if (isReach)
         {
-            buttonCloseDrawer.SetActive(true);
-        }
+            if (drawerIsOpen)
+            {
+                buttonCloseDrawer.SetActive(true);
+               
+            }
+            else
+            {
+                buttonCloseDrawer.SetActive(false);
 
+                if (pickKeyScript != null)
+                {
+                    pickKeyButton.SetActive(false);
+                    pickKeyScript.keyText.SetActive(false);
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,6 +55,7 @@ public class Drawer : MonoBehaviour
             isReach = true;
             drawerText.SetActive(true);
             buttonOpenDrawer.SetActive(true);
+           
 
         }
     }
@@ -52,6 +68,10 @@ public class Drawer : MonoBehaviour
             buttonOpenDrawer.SetActive(false);
             buttonCloseDrawer.SetActive(false);
             drawerText.SetActive(false);
+            if (pickKeyScript != null)
+            {
+                pickKeyButton.SetActive(false);
+            }
         }
     }
 
@@ -60,7 +80,8 @@ public class Drawer : MonoBehaviour
         drawer.SetBool("Open", true);
         drawer.SetBool("Close", false);
         drawerIsOpen = true;
-  
+   
+
     }
 
     public void CloseDrawer()
@@ -69,6 +90,11 @@ public class Drawer : MonoBehaviour
         drawer.SetBool("Close", true);
         buttonCloseDrawer.SetActive(false);
         drawerIsOpen = false;
+        
+        if (pickKeyScript != null)
+        {
+            pickKeyButton.SetActive(false);
+        }
     }
 
     
