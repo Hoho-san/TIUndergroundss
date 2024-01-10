@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement; // Add this line for scene management
 
 public class DoorLock : MonoBehaviour
 {
@@ -23,8 +24,15 @@ public class DoorLock : MonoBehaviour
     public GameObject doorLockText;
     public GameObject doorText;
     public GameObject GameOverText;
+    public GameObject LevelFinishedText;
 
     private Animator door;
+    private bool doorOpening;
+
+    public string level2SceneName = "Level2"; // Name of your level 2 scene
+
+    public GameManagerScript gameManager;
+
 
     private void Start()
     {
@@ -36,6 +44,7 @@ public class DoorLock : MonoBehaviour
         isTimerRunning = false;
 
         door = GetComponent<Animator>();
+        doorOpening = false; // Initialize doorOpening flag
     }
 
     private void Update()
@@ -64,11 +73,11 @@ public class DoorLock : MonoBehaviour
             timer -= Time.deltaTime;
             UpdateTimerDisplay();
 
-            if (timer <= 0f)
+            if (timer <= 1f)
             {
                 StopTimer();
                 // Timer expired, perform game over actions
-                GameOver();
+                gameManager.gameOver();
 
             }
         }
@@ -108,10 +117,24 @@ public class DoorLock : MonoBehaviour
 
     public void OpenDoor()
     {
-        door.SetBool("Open", true);
-        door.SetBool("Close", false);
-        doorIsOpen = true;
-        StopTimer();
+        Levelfinished();
+        if (!doorOpening)
+        {
+            StartCoroutine(LoadLevelAfterDelay(5f)); // Load level after 5 seconds
+            door.SetBool("Open", true);
+            door.SetBool("Close", false);
+            doorIsOpen = true;
+            StopTimer();
+            doorOpening = true; // Set flag to prevent multiple door opening actions
+        }
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for specified seconds
+
+        // Load Level 2
+        SceneManager.LoadScene("Level2"); // Replace "Level2" with your actual scene name
     }
 
     public void CloseDoor()
@@ -120,7 +143,11 @@ public class DoorLock : MonoBehaviour
         door.SetBool("Close", true);
         buttonCloseDoor.SetActive(false);
         doorIsOpen = false;
+
+        // Load level 2 after opening the door     
+        LoadLevel2();
     }
+
 
     public void DoorLocked()
     {
@@ -131,6 +158,7 @@ public class DoorLock : MonoBehaviour
 
     private void StartTimer()
     {
+        timerText.gameObject.SetActive(true);
         isTimerRunning = true;
     }
 
@@ -147,12 +175,20 @@ public class DoorLock : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    private void GameOver()
+    private void Levelfinished()
     {
         timerText.gameObject.SetActive(false);
-        GameOverText.SetActive(true);
+        LevelFinishedText.SetActive(true);
+        timerText.gameObject.SetActive(false);
         // Implement game over actions here (e.g., restart level, show game over screen)
-        Debug.Log("Game Over: Time's up!");
+        Debug.Log("Level Done");
         // You can add your game over logic here
+    }
+
+
+    private void LoadLevel2()
+    {
+        // Load the next scene (Level 2)
+        SceneManager.LoadScene(level2SceneName);
     }
 }
