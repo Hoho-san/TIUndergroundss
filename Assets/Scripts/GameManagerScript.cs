@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,27 +10,33 @@ public class GameManagerScript : MonoBehaviour
     public GameObject HUD;
     public GameObject buttons;
 
+    public float timerDuration = 180f; // 3 minutes timer
+    public TMP_Text timerText;
+    private bool isTimerRunning;
+    private float timer;
+
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        timer = timerDuration;
+        isTimerRunning = false;
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        if (gameOverUI.activeInHierarchy)
+    {
+        if (isTimerRunning)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            timer -= Time.deltaTime;
+            UpdateTimerDisplay();
+
+            if (timer <= 1f)
+            {
+               StopTimer();
+               gameOver();
+            }
         }
-        else
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        
+
     }
 
     public void gameOver()
@@ -55,6 +61,42 @@ public class GameManagerScript : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    public void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        Debug.Log("next level");
+
+        // Check if there is a next scene
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.LogWarning("No next scene available.");
+        }
+    }
+
+    public void StartTimer()
+    {
+        timerText.gameObject.SetActive(true);
+        isTimerRunning = true;
+    }
+
+    public void StopTimer()
+    {
+        isTimerRunning = false;
+    }
+
+    public void UpdateTimerDisplay()
+    {
+        int minutes = Mathf.FloorToInt(timer / 60f);
+        int seconds = Mathf.FloorToInt(timer % 60f);
+
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
 }
