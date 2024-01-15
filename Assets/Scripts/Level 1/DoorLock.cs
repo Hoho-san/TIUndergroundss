@@ -28,9 +28,6 @@ public class DoorLock : MonoBehaviour
 
     private Animator door;
     private bool doorOpening;
-
-    public string level2SceneName = "Level2"; // Name of your level 2 scene
-
     public GameManagerScript gameManager;
 
 
@@ -71,11 +68,11 @@ public class DoorLock : MonoBehaviour
         if (isTimerRunning)
         {
             timer -= Time.deltaTime;
-            UpdateTimerDisplay();
+            gameManager.UpdateTimerDisplay();
 
             if (timer <= 1f)
             {
-                StopTimer();
+                gameManager.StopTimer();
                 // Timer expired, perform game over actions
                 gameManager.gameOver();
 
@@ -97,7 +94,7 @@ public class DoorLock : MonoBehaviour
             else
             {
                 buttonLockDoor.SetActive(true);
-                StartTimer();
+                gameManager.StartTimer();
             }
         }
     }
@@ -120,21 +117,20 @@ public class DoorLock : MonoBehaviour
         Levelfinished();
         if (!doorOpening)
         {
-            StartCoroutine(LoadLevelAfterDelay(5f)); // Load level after 5 seconds
+            StartCoroutine(LoadLevelAfterDelay(3f));
             door.SetBool("Open", true);
             door.SetBool("Close", false);
             doorIsOpen = true;
-            StopTimer();
+            gameManager.StopTimer();
             doorOpening = true; // Set flag to prevent multiple door opening actions
         }
     }
 
     IEnumerator LoadLevelAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay); // Wait for specified seconds
+        yield return new WaitForSeconds(delay);
+        gameManager.LoadNextLevel();
 
-        // Load Level 2
-        SceneManager.LoadScene("Level2"); // Replace "Level2" with your actual scene name
     }
 
     public void CloseDoor()
@@ -143,52 +139,21 @@ public class DoorLock : MonoBehaviour
         door.SetBool("Close", true);
         buttonCloseDoor.SetActive(false);
         doorIsOpen = false;
-
-        // Load level 2 after opening the door     
-        LoadLevel2();
+   
     }
-
 
     public void DoorLocked()
     {
         doorLockText.SetActive(true);
         doorText.SetActive(false);
-        StartTimer();
-    }
-
-    private void StartTimer()
-    {
-        timerText.gameObject.SetActive(true);
-        isTimerRunning = true;
-    }
-
-    private void StopTimer()
-    {
-        isTimerRunning = false;
-    }
-
-    private void UpdateTimerDisplay()
-    {
-        int minutes = Mathf.FloorToInt(timer / 60f);
-        int seconds = Mathf.FloorToInt(timer % 60f);
-
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        gameManager.StartTimer();
     }
 
     private void Levelfinished()
     {
-        timerText.gameObject.SetActive(false);
+        gameManager.timerText.gameObject.SetActive(false);
         LevelFinishedText.SetActive(true);
-        timerText.gameObject.SetActive(false);
-        // Implement game over actions here (e.g., restart level, show game over screen)
+        gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
-        // You can add your game over logic here
-    }
-
-
-    private void LoadLevel2()
-    {
-        // Load the next scene (Level 2)
-        SceneManager.LoadScene(level2SceneName);
     }
 }

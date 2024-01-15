@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class EntranceWall : MonoBehaviour
+public class Filebinder : MonoBehaviour
 {
+
+    public GameObject PickBinderButton;
+
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;
@@ -13,10 +15,21 @@ public class EntranceWall : MonoBehaviour
         if (other.gameObject.tag == "Reach")
         {
             isReach = true;
+            PickBinderButton.SetActive(true);
             if (!doorIsOpen)
             {
                 gameManager.StartTimer();
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Reach")
+        {
+            isReach = false;
+            PickBinderButton.SetActive(false);
+           // doorText.SetActive(false);
         }
     }
 }
