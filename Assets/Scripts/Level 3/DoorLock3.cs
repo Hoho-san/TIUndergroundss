@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DoorLock3 : MonoBehaviour
 {
-    public GameObject buttonOpenDoor;
-
     private bool isReach;
     private bool doorIsOpen;
 
@@ -16,12 +14,14 @@ public class DoorLock3 : MonoBehaviour
     private bool doorOpening;
 
     public GameManagerScript gameManager;
+    private bool isFunctionalityActive = true;
+
 
     private void Start()
     {
         isReach = false;
         doorIsOpen = false;
-
+       
         door = GetComponent<Animator>();
         doorOpening = false;
     }
@@ -33,32 +33,33 @@ public class DoorLock3 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Reach")
+        if (isFunctionalityActive && other.gameObject.tag == "Reach")
         {
             isReach = true;
             doorText.SetActive(true);
-
-            if (!doorIsOpen)
-            {
-                buttonOpenDoor.SetActive(true);
-                gameManager.StartTimer();
-            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Reach")
+        if (isFunctionalityActive && other.gameObject.tag == "Reach")
         {
             isReach = false;
-            buttonOpenDoor.SetActive(false);
             doorText.SetActive(false);
         }
     }
 
+    // Another function to stop the functionality
+    public void StopFunctionality()
+    {
+        isFunctionalityActive = false;
+    }
+
+ 
     public void OpenDoor()
     {
-        Levelfinished();
+        Debug.Log("Door open");
+       // Levelfinished();
         if (!doorOpening)
         {
             StartCoroutine(LoadLevelAfterDelay(3f));
@@ -77,18 +78,13 @@ public class DoorLock3 : MonoBehaviour
 
     }
 
-    public void CloseDoor()
-    {
-        door.SetBool("Open", false);
-        door.SetBool("Close", true);
-        doorIsOpen = false;
-    }
 
-
-    private void Levelfinished()
+    public void Levelfinished()
     {
         gameManager.timerText.gameObject.SetActive(false);
         LevelFinishedText.SetActive(true);
+        gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
+        doorText.SetActive(false);
     }
 }
