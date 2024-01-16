@@ -9,6 +9,7 @@ public class Keypad : MonoBehaviour
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;
+   // public Controller controller;
 
     private bool isFunctionalityActive = true;
     private void OnTriggerEnter(Collider other)

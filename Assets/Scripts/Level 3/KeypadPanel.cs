@@ -17,6 +17,7 @@ public class KeypadPanel : MonoBehaviour
     private bool passwordEntered = false;
     public GameObject Entrancewall;
 
+    
 
     public void Number(int number)
     {
@@ -45,6 +46,7 @@ public class KeypadPanel : MonoBehaviour
             DoorLock3.StopFunctionality();
             deactivatekeypad.StopFunctionality();
             Entrancewall.SetActive(true);
+
         }
         else
         {

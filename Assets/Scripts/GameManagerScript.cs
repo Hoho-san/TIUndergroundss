@@ -9,11 +9,14 @@ public class GameManagerScript : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject HUD;
     public GameObject buttons;
+    public GameObject keypadpanel;
 
     public float timerDuration = 180f; // 3 minutes timer
     public TMP_Text timerText;
     private bool isTimerRunning;
     private float timer;
+
+    public Controller controller;
 
     // Start is called before the first frame update
     void Start()
@@ -45,17 +48,21 @@ public class GameManagerScript : MonoBehaviour
         gameOverUI.SetActive(true);
         HUD.SetActive(false);
         buttons.SetActive(false);
+        keypadpanel.SetActive(false);
+        controller.StopPlayer();
         Debug.Log("Game Over: Time's up!");
     }
 
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        controller.ContPlayer();
     }
 
     public void mainMenu()
     {
         SceneManager.LoadScene(0);
+        controller.ContPlayer();
     }
     public void QuitGame()
     {

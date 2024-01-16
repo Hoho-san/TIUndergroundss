@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static PlayerController;
 
-public class FirstPersonController : MonoBehaviour
+public class Controller : MonoBehaviour
 {
     // References
 
@@ -44,6 +44,8 @@ public class FirstPersonController : MonoBehaviour
     private Vector2 moveTouchStartPosition;
     private Vector2 moveInput;
 
+    private bool ControlActive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,13 +67,13 @@ public class FirstPersonController : MonoBehaviour
         GetTouchInput();
 
      
-        if (rightFingerId != -1) {
+        if (ControlActive && rightFingerId != -1) {
             // Ony look around if the right finger is being tracked
             Debug.Log("Rotating");
             LookAround();
         }
 
-        if (leftFingerId != -1)
+        if (ControlActive && leftFingerId != -1)
         {
             // Ony move if the left finger is being tracked
             Debug.Log("Moving");
@@ -79,13 +81,21 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    public void StopPlayer()
+    {
+        ControlActive = false;
+    }
+
+    public void ContPlayer()
+    {
+        ControlActive = true;
+    }
+
     void GetTouchInput() {
         // Iterate through all the detected touches
         for (int i = 0; i < Input.touchCount; i++)
         {
-
             Touch t = Input.GetTouch(i);
-
             // Check each touch's phase
             switch (t.phase)
             {
