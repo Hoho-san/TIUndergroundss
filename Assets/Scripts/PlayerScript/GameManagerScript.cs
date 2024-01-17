@@ -11,6 +11,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject buttons;
     public GameObject keypadpanel;
     public GameObject resumeButton;
+    public GameObject joystick;
 
     public float timerDuration = 180f; // 3 minutes timer
     public TMP_Text timerText;
@@ -37,21 +38,22 @@ public class GameManagerScript : MonoBehaviour
 
             if (timer <= 1f)
             {
-               StopTimer();
-               gameOver();
+                StopTimer();
+                gameOver();
             }
         }
-       
+
 
     }
 
     public void gameOver()
     {
-      
+
         gameOverUI.SetActive(true);
         HUD.SetActive(false);
         buttons.SetActive(false);
         keypadpanel.SetActive(false);
+        joystick.SetActive(false);
         controller.StopPlayer();
         Debug.Log("Game Over: Time's up!");
     }

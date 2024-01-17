@@ -9,21 +9,15 @@ public class DoorLock : MonoBehaviour
 {
     public GameObject keyInventory;
     public GameObject buttonOpenDoor;
-    public GameObject buttonCloseDoor;
     public GameObject buttonLockDoor;
-
-    public float timerDuration = 180f; // 3 minutes timer
-    public TMP_Text timerText;
 
     private bool isReach;
     private bool hasKey;
     private bool doorIsOpen;
-    private bool isTimerRunning;
-    private float timer;
 
     public GameObject doorLockText;
     public GameObject doorText;
-    public GameObject GameOverText;
+
     public GameObject LevelFinishedText;
 
     private Animator door;
@@ -31,17 +25,12 @@ public class DoorLock : MonoBehaviour
     public GameManagerScript gameManager;
     public Scene_Manager sceneManager;
 
-
     private void Start()
     {
         sceneManager.Save_and_Exit();
         isReach = false;
         hasKey = false;
         doorIsOpen = false;
-
-        timer = timerDuration;
-        isTimerRunning = false;
-
         door = GetComponent<Animator>();
         doorOpening = false; // Initialize doorOpening flag
         
@@ -58,29 +47,11 @@ public class DoorLock : MonoBehaviour
             hasKey = false;
         }
 
-        if (isReach && doorIsOpen)
-        {
-            buttonCloseDoor.SetActive(true);
-        }
-
         if (isReach && hasKey && !doorIsOpen)
         {
             buttonOpenDoor.SetActive(true);
         }
-
-        if (isTimerRunning)
-        {
-            timer -= Time.deltaTime;
-            gameManager.UpdateTimerDisplay();
-
-            if (timer <= 1f)
-            {
-                gameManager.StopTimer();
-                // Timer expired, perform game over actions
-                gameManager.gameOver();
-
-            }
-        }
+        gameManager.UpdateTimerDisplay();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -108,7 +79,6 @@ public class DoorLock : MonoBehaviour
         {
             isReach = false;
             buttonOpenDoor.SetActive(false);
-            buttonCloseDoor.SetActive(false);
             buttonLockDoor.SetActive(false);
             doorLockText.SetActive(false);
             doorText.SetActive(false);
@@ -137,15 +107,6 @@ public class DoorLock : MonoBehaviour
 
     }
 
-    public void CloseDoor()
-    {
-        door.SetBool("Open", false);
-        door.SetBool("Close", true);
-        buttonCloseDoor.SetActive(false);
-        doorIsOpen = false;
-   
-    }
-
     public void DoorLocked()
     {
         doorLockText.SetActive(true);
@@ -161,4 +122,5 @@ public class DoorLock : MonoBehaviour
         Debug.Log("Level Done");
 
     }
+
 }

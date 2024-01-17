@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
-    public enum PlayerControlMode { FirstPerson, ThirdPerson}
+    public enum PlayerControlMode { FirstPerson, ThirdPerson }
     public PlayerControlMode mode;
 
     // References
@@ -61,9 +61,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveTouchStartPosition;
     private Vector2 moveInput;
 
-    private void Awake(){
-        if(instance == null) instance = this;
-        else if(instance != this) Destroy(gameObject);
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);
     }
 
     private void Start()
@@ -78,7 +79,8 @@ public class PlayerController : MonoBehaviour
         // calculate the movement input dead zone
         moveInputDeadZone = Mathf.Pow(Screen.height / moveInputDeadZone, 2);
 
-        if (mode == PlayerControlMode.ThirdPerson) {
+        if (mode == PlayerControlMode.ThirdPerson)
+        {
 
             // Get the initial angle for the camera pole
             cameraPitch = cameraPole.localRotation.eulerAngles.x;
@@ -94,7 +96,8 @@ public class PlayerController : MonoBehaviour
         GetTouchInput();
 
 
-        if (rightFingerId != -1) {
+        if (rightFingerId != -1)
+        {
             // Ony look around if the right finger is being tracked
             //Debug.Log("Rotating");
             LookAround();
@@ -115,7 +118,8 @@ public class PlayerController : MonoBehaviour
         if (mode == PlayerControlMode.ThirdPerson) MoveCamera();
     }
 
-    private void GetTouchInput() {
+    private void GetTouchInput()
+    {
         // Iterate through all the detected touches
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -167,7 +171,8 @@ public class PlayerController : MonoBehaviour
                     {
                         lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
                     }
-                    else if (t.fingerId == leftFingerId) {
+                    else if (t.fingerId == leftFingerId)
+                    {
 
                         // calculating the position delta from the start position
                         moveInput = t.position - moveTouchStartPosition;
@@ -211,22 +216,27 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(transform.up, lookInput.x);
     }
 
-    private void MoveCamera() {
+    private void MoveCamera()
+    {
 
         Vector3 rayDir = tpCameraTransform.position - cameraPole.position;
 
         Debug.DrawRay(cameraPole.position, rayDir, Color.red);
         // Check if the camera would be colliding with any obstacle
-        if (Physics.Raycast(cameraPole.position, rayDir, out RaycastHit hit, Mathf.Abs(maxCameraDistance), cameraObstacleLayers)){
+        if (Physics.Raycast(cameraPole.position, rayDir, out RaycastHit hit, Mathf.Abs(maxCameraDistance), cameraObstacleLayers))
+        {
             // Move the camera to the impact point
             tpCameraTransform.position = hit.point;
-        } else {
+        }
+        else
+        {
             // Move the camera to the max distance on the local z axis
             tpCameraTransform.localPosition = new Vector3(0, 0, maxCameraDistance);
         }
     }
 
-    private void Move() {
+    private void Move()
+    {
 
         // Don't move if the touch delta is shorter than the designated dead zone
         if (moveInput.sqrMagnitude <= moveInputDeadZone)
@@ -235,7 +245,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (!isMoving) {
+        if (!isMoving)
+        {
             graphics.localRotation = Quaternion.Euler(0, 0, 0);
             isMoving = true;
         }
@@ -245,7 +256,7 @@ public class PlayerController : MonoBehaviour
         characterController.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
 
         //Calculate y (vertical) movement
-        if (grounded && verticalVelocity <=0)
+        if (grounded && verticalVelocity <= 0)
         {
             verticalVelocity = -stickToGroundForce * Time.deltaTime;
         }
@@ -256,10 +267,11 @@ public class PlayerController : MonoBehaviour
 
         //Apply y (vertical) movement
         Vector3 verticalMovement = transform.up * verticalVelocity;
-        characterController.Move(verticalMovement * Time.deltaTime);    
+        characterController.Move(verticalMovement * Time.deltaTime);
     }
-    
-    public void ResetInput(){
+
+    public void ResetInput()
+    {
         // id = -1 means the finger is not being tracked
         leftFingerId = -1;
         rightFingerId = -1;
