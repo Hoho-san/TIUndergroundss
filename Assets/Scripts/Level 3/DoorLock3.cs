@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class DoorLock3 : MonoBehaviour
@@ -14,6 +15,8 @@ public class DoorLock3 : MonoBehaviour
     private bool doorOpening;
 
     public GameManagerScript gameManager;
+    public Scene_Manager sceneManager;
+
     private bool isFunctionalityActive = true;
 
 
@@ -21,9 +24,9 @@ public class DoorLock3 : MonoBehaviour
     {
         isReach = false;
         doorIsOpen = false;
-       
         door = GetComponent<Animator>();
         doorOpening = false;
+        sceneManager.Save_and_Exit();
     }
 
     private void Update()
@@ -86,5 +89,6 @@ public class DoorLock3 : MonoBehaviour
         gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
         doorText.SetActive(false);
+       
     }
 }

@@ -16,14 +16,15 @@ public class DoorMaze : MonoBehaviour
     private bool doorOpening;
 
     public GameManagerScript gameManager;
+    public Scene_Manager sceneManager;  
 
     private void Start()
     {
         isReach = false;
         doorIsOpen = false;
-
         door = GetComponent<Animator>();
         doorOpening = false;
+        sceneManager.Save_and_Exit();
     }
 
     private void Update()
@@ -91,5 +92,6 @@ public class DoorMaze : MonoBehaviour
         LevelFinishedText.SetActive(true);
         gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
+       
     }
 }

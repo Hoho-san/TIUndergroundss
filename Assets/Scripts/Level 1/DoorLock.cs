@@ -29,6 +29,7 @@ public class DoorLock : MonoBehaviour
     private Animator door;
     private bool doorOpening;
     public GameManagerScript gameManager;
+    public Scene_Manager sceneManager;
 
 
     private void Start()
@@ -42,6 +43,7 @@ public class DoorLock : MonoBehaviour
 
         door = GetComponent<Animator>();
         doorOpening = false; // Initialize doorOpening flag
+        sceneManager.Save_and_Exit();
     }
 
     private void Update()
@@ -124,6 +126,7 @@ public class DoorLock : MonoBehaviour
             gameManager.StopTimer();
             doorOpening = true; // Set flag to prevent multiple door opening actions
         }
+        
     }
 
     IEnumerator LoadLevelAfterDelay(float delay)
@@ -155,5 +158,6 @@ public class DoorLock : MonoBehaviour
         LevelFinishedText.SetActive(true);
         gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
+
     }
 }
