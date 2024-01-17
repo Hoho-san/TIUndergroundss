@@ -148,9 +148,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 922224087}
-  - {fileID: 1915678491}
   - {fileID: 313522237}
   - {fileID: 1882560488}
+  - {fileID: 1915678491}
   m_Father: {fileID: 558117289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1015,6 +1015,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2fb6cec2f61684fa36b24f88a2def2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Saved_scene: 
+  Scene_index: 0
+  resumeButton: {fileID: 1915678490}
 --- !u!1 &1179874521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,9 +1662,11 @@ MonoBehaviour:
   HUD: {fileID: 0}
   buttons: {fileID: 0}
   keypadpanel: {fileID: 0}
+  resumeButton: {fileID: 0}
   timerDuration: 180
   timerText: {fileID: 0}
   controller: {fileID: 0}
+  sceneManager: {fileID: 1118056574}
 --- !u!4 &1567223787
 Transform:
   m_ObjectHideFlags: 0

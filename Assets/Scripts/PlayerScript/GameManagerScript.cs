@@ -10,6 +10,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject HUD;
     public GameObject buttons;
     public GameObject keypadpanel;
+    public GameObject resumeButton;
 
     public float timerDuration = 180f; // 3 minutes timer
     public TMP_Text timerText;
@@ -17,6 +18,7 @@ public class GameManagerScript : MonoBehaviour
     private float timer;
 
     public Controller controller;
+    public Scene_Manager sceneManager;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class GameManagerScript : MonoBehaviour
                gameOver();
             }
         }
+       
 
     }
 

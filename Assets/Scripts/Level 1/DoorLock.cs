@@ -34,6 +34,7 @@ public class DoorLock : MonoBehaviour
 
     private void Start()
     {
+        sceneManager.Save_and_Exit();
         isReach = false;
         hasKey = false;
         doorIsOpen = false;
@@ -43,7 +44,7 @@ public class DoorLock : MonoBehaviour
 
         door = GetComponent<Animator>();
         doorOpening = false; // Initialize doorOpening flag
-        sceneManager.Save_and_Exit();
+        
     }
 
     private void Update()

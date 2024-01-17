@@ -7664,9 +7664,11 @@ MonoBehaviour:
   HUD: {fileID: 1311897864}
   buttons: {fileID: 133520333}
   keypadpanel: {fileID: 0}
+  resumeButton: {fileID: 0}
   timerDuration: 180
   timerText: {fileID: 1934303681}
   controller: {fileID: 1752104261}
+  sceneManager: {fileID: 0}
 --- !u!4 &416815545
 Transform:
   m_ObjectHideFlags: 0
@@ -39287,10 +39289,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1752104256}
-    - targetCorrespondingSourceObject: {fileID: 1000010705876500, guid: e6108bcb1af0318449feb94f95b8315f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1752104251}
     - targetCorrespondingSourceObject: {fileID: 1000011763535922, guid: e6108bcb1af0318449feb94f95b8315f,
         type: 3}
       insertIndex: -1
@@ -39320,24 +39318,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1752104246}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1752104250 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000010705876500, guid: e6108bcb1af0318449feb94f95b8315f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1752104246}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1752104251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752104250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33a14edc3e5f57b479fcd67d7a4f79dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!143 &1752104255
 CharacterController:
   m_ObjectHideFlags: 0
@@ -40451,6 +40431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2fb6cec2f61684fa36b24f88a2def2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Saved_scene: 
+  Scene_index: 0
+  resumeButton: {fileID: 0}
 --- !u!4 &1805569513
 Transform:
   m_ObjectHideFlags: 0
