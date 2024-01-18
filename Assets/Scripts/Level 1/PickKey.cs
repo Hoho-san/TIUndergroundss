@@ -9,6 +9,8 @@ public class PickKey : MonoBehaviour
     public GameObject keyButton;
     public GameObject keyText;
 
+
+
     public bool isReach;
     public Drawer drawerScript; // Reference to the Drawer script
 
@@ -26,13 +28,11 @@ public class PickKey : MonoBehaviour
             keyButton.SetActive(true);
             keyText.SetActive(true);
             drawerScript.drawerText.SetActive(false);
-           
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-
         if (other.gameObject.tag == "Reach")
         {
             isReach = false;
@@ -43,15 +43,11 @@ public class PickKey : MonoBehaviour
 
     public void PickTheKey()
     {
+        // Perform key pickup actions
         keyObject.SetActive(false);
         keyInventory.SetActive(true);
         keyButton.SetActive(false);
         keyText.SetActive(false);
 
-        // Call the CloseDrawer method in the Drawer script when the key is picked
-        if (drawerScript != null)
-        {
-            drawerScript.CloseDrawer();
-        }
     }
 }

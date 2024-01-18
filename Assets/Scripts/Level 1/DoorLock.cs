@@ -87,24 +87,23 @@ public class DoorLock : MonoBehaviour
 
     public void OpenDoor()
     {
+        
         Levelfinished();
         if (!doorOpening)
         {
-            StartCoroutine(LoadLevelAfterDelay(3f));
             door.SetBool("Open", true);
             door.SetBool("Close", false);
             doorIsOpen = true;
             gameManager.StopTimer();
             doorOpening = true; // Set flag to prevent multiple door opening actions
         }
-        
+        StartCoroutine(LoadLevelAfterDelay(4f));
     }
 
     IEnumerator LoadLevelAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         gameManager.LoadNextLevel();
-
     }
 
     public void DoorLocked()
