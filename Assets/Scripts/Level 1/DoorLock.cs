@@ -97,7 +97,7 @@ public class DoorLock : MonoBehaviour
             gameManager.StopTimer();
             doorOpening = true; // Set flag to prevent multiple door opening actions
         }
-        StartCoroutine(LoadLevelAfterDelay(4f));
+        StartCoroutine(LoadLevelAfterDelay(3f));
     }
 
     IEnumerator LoadLevelAfterDelay(float delay)
