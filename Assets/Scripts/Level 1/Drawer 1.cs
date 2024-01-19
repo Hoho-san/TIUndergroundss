@@ -21,6 +21,7 @@ public class Drawer : MonoBehaviour
     public GameObject pickKeyButton;
     public PickKey pickKeyScript; // Reference to the PickKey script
 
+    public float pushForce = 10f;
     private void Start()
     {
         isReach = false;
@@ -107,6 +108,19 @@ public class Drawer : MonoBehaviour
         if (drawerSound != null)
         {
             audioSource.PlayOneShot(drawerSound);
+        }
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            Rigidbody playerRigidbody = collision.collider.GetComponent<Rigidbody>();
+
+            if (playerRigidbody != null)
+            {
+                Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
+                playerRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+            }
         }
     }
 
