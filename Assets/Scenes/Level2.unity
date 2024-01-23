@@ -7817,8 +7817,8 @@ MonoBehaviour:
   joystick: {fileID: 1152003438}
   timerDuration: 180
   timerText: {fileID: 1934303681}
-  controller: {fileID: 0}
-  sceneManager: {fileID: 0}
+  controller: {fileID: 830744062}
+  sceneManager: {fileID: 1805569512}
 --- !u!4 &416815545
 Transform:
   m_ObjectHideFlags: 0
@@ -14403,8 +14403,8 @@ Transform:
   m_GameObject: {fileID: 670793854}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.6636581, y: -11.602768, z: 0.94487}
-  m_LocalScale: {x: 0.77974004, y: 1.0928, z: 0.78519005}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1536853948}

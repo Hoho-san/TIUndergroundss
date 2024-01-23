@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PlayerController;
+
 
 public class Controller : MonoBehaviour
 {
@@ -174,7 +174,7 @@ public class Controller : MonoBehaviour
 
         // vertical (pitch) rotation
         cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y, -90f, 90f);
-        cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
+        cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 90, 0);
 
         // horizontal (yaw) rotation
         transform.Rotate(transform.up, lookInput.x);
@@ -183,18 +183,16 @@ public class Controller : MonoBehaviour
     void Move()
     {
 
-        //   grounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayers);
-
-        // Don't move if the touch delta is shorter than the designated dead zone
         if (moveInput.sqrMagnitude <= moveInputDeadZone) return;
 
-        // Multiply the normalized direction by the speed
-        Vector2 movementDirection = moveInput.normalized * moveSpeed * Time.deltaTime;
-        // Move relatively to the local transform's direction
-        characterController.Move(transform.right * movementDirection.x + transform.forward * movementDirection.y);
+        // Transform the input relative to the camera's forward and right vectors
+        Vector3 cameraForward = Vector3.Scale(cameraTransform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 movementDirection = (cameraForward * moveInput.y + cameraTransform.right * moveInput.x).normalized;
 
+        // Move the character controller
+        characterController.Move(movementDirection * moveSpeed * Time.deltaTime);
 
-        //Calculate y (vertical) movement
+        // Apply gravity
         if (grounded && verticalVelocity <= 0)
         {
             verticalVelocity = -stickToGroundForce * Time.deltaTime;
@@ -204,7 +202,7 @@ public class Controller : MonoBehaviour
             verticalVelocity -= gravity * Time.deltaTime;
         }
 
-        //Apply y (vertical) movement
+        // Apply vertical movement
         Vector3 verticalMovement = transform.up * verticalVelocity;
         characterController.Move(verticalMovement * Time.deltaTime);
     }
