@@ -4745,12 +4745,12 @@ MonoBehaviour:
   HUD: {fileID: 1311897864}
   buttons: {fileID: 133520333}
   keypadpanel: {fileID: 1605777694}
-  resumeButton: {fileID: 0}
   joystick: {fileID: 1798941682}
   timerDuration: 10
   timerText: {fileID: 1934303681}
   controller: {fileID: 498816356}
   sceneManager: {fileID: 1358147051}
+  dot: {fileID: 394308755}
 --- !u!4 &416815545
 Transform:
   m_ObjectHideFlags: 0

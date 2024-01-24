@@ -10,7 +10,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject HUD;
     public GameObject buttons;
     public GameObject keypadpanel;
-    public GameObject resumeButton;
+  
     public GameObject joystick;
 
     public float timerDuration = 180f; // 3 minutes timer
@@ -21,11 +21,19 @@ public class GameManagerScript : MonoBehaviour
     public Controller controller;
     public Scene_Manager sceneManager;
 
+    public GameObject dot;
+
     // Start is called before the first frame update
     void Start()
     {
         timer = timerDuration;
         isTimerRunning = false;
+
+        // Check PlayerPrefs for the Dot state
+        bool dotState = PlayerPrefs.GetInt("DotState", 1) == 1;
+
+        // Set the Dot UI component's visibility based on PlayerPrefs
+        dot.SetActive(dotState);
     }
 
     // Update is called once per frame
@@ -110,5 +118,10 @@ public class GameManagerScript : MonoBehaviour
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    
+
+     
+    
 
 }
