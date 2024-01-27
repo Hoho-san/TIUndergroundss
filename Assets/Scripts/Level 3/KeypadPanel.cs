@@ -17,7 +17,9 @@ public class KeypadPanel : MonoBehaviour
     private bool passwordEntered = false;
     public GameObject Entrancewall;
 
-    
+    public AudioManager doorAudio;
+
+
 
     public void Number(int number)
     {
@@ -41,12 +43,12 @@ public class KeypadPanel : MonoBehaviour
     {
         if (Ans.text == Answer)
         {
-            Ans.text = "Nice";
+            Ans.text = "Unlocked";
             DoorLock3.OpenDoor();
             DoorLock3.StopFunctionality();
             deactivatekeypad.StopFunctionality();
+            doorAudio.PlaySound();
             Entrancewall.SetActive(true);
-
         }
         else
         {

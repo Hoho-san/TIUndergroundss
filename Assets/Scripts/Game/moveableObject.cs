@@ -15,7 +15,6 @@ public class moveableObject : MonoBehaviour
             Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
             forceDirection.y = 0;
             forceDirection.Normalize();
-
             _rigg.AddForceAtPosition(forceDirection * pushForce, transform.position, ForceMode.Impulse);
         }
     }

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Filebinder : MonoBehaviour
 {
-
     public GameObject PickBinderButton;
-
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;
