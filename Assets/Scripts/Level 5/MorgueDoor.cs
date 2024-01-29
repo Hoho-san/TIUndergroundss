@@ -7,8 +7,8 @@ public class MorgueDoor : MonoBehaviour
 {
     public GameObject buttonOpenMorgueDoor;
     public GameObject buttonCloseMorgueDoor;
-   // public AudioClip drawerSound;
-   // private AudioSource audioSource;
+    public AudioClip morgueDoorsound;
+    private AudioSource audioSource;
 
     private bool isReach;
     private bool MorgueDoorIsOpen;
@@ -25,8 +25,8 @@ public class MorgueDoor : MonoBehaviour
     {
         isReach = false;
         MorgueDoorIsOpen = false;
-        //    audioSource = GetComponent<AudioSource>();
-        //audioSource.clip = drawerSound;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = morgueDoorsound;
         morgue = GetComponent<Animator>();
     }
 
@@ -81,16 +81,17 @@ public class MorgueDoor : MonoBehaviour
 
     public void OpenMortuaryChamber()
     {
-        // PlayDrawerSound();
+        PlayMorgueDoorSound();
         morgue.SetBool("Open", true);
         morgue.SetBool("Close", false);
         MorgueDoorIsOpen = true;
+
 
     }
 
     public void CloseMortuaryChamber()
     {
-        // PlayDrawerSound();
+        PlayMorgueDoorSound();
         morgue.SetBool("Open", false);
         morgue.SetBool("Close", true);
         buttonCloseMorgueDoor.SetActive(false);
@@ -102,13 +103,13 @@ public class MorgueDoor : MonoBehaviour
         }*/
     }
 
-   /* private void PlayDrawerSound()
+    private void PlayMorgueDoorSound()
     {
-        if (drawerSound != null)
+        if (morgueDoorsound != null)
         {
-            audioSource.PlayOneShot(drawerSound);
+            audioSource.PlayOneShot(morgueDoorsound);
         }
-    }*/
+    }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
