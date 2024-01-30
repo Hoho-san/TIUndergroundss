@@ -6969,7 +6969,7 @@ MonoBehaviour:
   buttons: {fileID: 133520333}
   keypadpanel: {fileID: 1605777694}
   joystick: {fileID: 1798941682}
-  timerDuration: 180
+  timerDuration: 100
   timerText: {fileID: 1934303681}
   controller: {fileID: 498816356}
   sceneManager: {fileID: 1358147051}
@@ -10783,6 +10783,7 @@ GameObject:
   - component: {fileID: 803873192}
   - component: {fileID: 803873191}
   - component: {fileID: 803873193}
+  - component: {fileID: 803873194}
   m_Layer: 0
   m_Name: CompressedWall
   m_TagString: Untagged
@@ -10836,7 +10837,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803873190}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7e78b5e28ca1f414aa9590c4ea0a2c61, type: 2}
   m_CullingMode: 0
@@ -10850,6 +10851,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &803873194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803873190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b8d7db0253f1d4bb7bdd3833065256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &814309010 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c0890b4c4a0a7d94c8d4726326e01ce8,
@@ -25861,6 +25874,7 @@ MonoBehaviour:
   elevatorSwitchbtn: {fileID: 1525716848}
   elevatorswitchtxt: {fileID: 1608065972}
   gameManager: {fileID: 416815544}
+  compressWall: {fileID: 803873194}
 --- !u!1 &1795525913
 GameObject:
   m_ObjectHideFlags: 0

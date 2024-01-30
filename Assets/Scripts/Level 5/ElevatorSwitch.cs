@@ -10,6 +10,7 @@ public class ElevatorSwitch : MonoBehaviour
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;
+    public CompressWall compressWall;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +22,7 @@ public class ElevatorSwitch : MonoBehaviour
             if (!doorIsOpen)
             {
                 gameManager.StartTimer();
+                compressWall.StartCompressing();
             }
         }
     }

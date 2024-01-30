@@ -34,7 +34,6 @@ public class Elevator : MonoBehaviour
         elevator.SetBool("Down", true);
     }
 
-
     public void OpenElevator()
     {
         elevatorOpensound.PlaySound();

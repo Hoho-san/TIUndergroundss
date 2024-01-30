@@ -20,7 +20,6 @@ public class Filebinder : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Reach")

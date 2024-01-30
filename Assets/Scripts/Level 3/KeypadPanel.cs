@@ -15,11 +15,9 @@ public class KeypadPanel : MonoBehaviour
     public DoorLock3 DoorLock3;
     public Keypad deactivatekeypad;
     private bool passwordEntered = false;
+
     public GameObject Entrancewall;
-
     public AudioManager doorAudio;
-
-
 
     public void Number(int number)
     {
@@ -38,7 +36,6 @@ public class KeypadPanel : MonoBehaviour
             Ans.text = "Too Long";
         }
     }
-
     public void Execute()
     {
         if (Ans.text == Answer)
@@ -55,7 +52,6 @@ public class KeypadPanel : MonoBehaviour
             Ans.text = "Bobo";
         }
     }
-   
     public void Clear()
     {
         Ans.text = "";
