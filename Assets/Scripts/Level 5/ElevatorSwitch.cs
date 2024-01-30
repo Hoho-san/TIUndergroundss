@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Filebinder : MonoBehaviour
+public class ElevatorSwitch : MonoBehaviour
 {
-    public GameObject PickBinderButton;
+    public GameObject elevatorSwitchbtn;
+    public GameObject elevatorswitchtxt;
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Reach")
         {
             isReach = true;
-            PickBinderButton.SetActive(true);
+            elevatorSwitchbtn.SetActive(true);
+            elevatorswitchtxt.SetActive(true);
             if (!doorIsOpen)
             {
                 gameManager.StartTimer();
@@ -26,8 +30,8 @@ public class Filebinder : MonoBehaviour
         if (other.gameObject.tag == "Reach")
         {
             isReach = false;
-            PickBinderButton.SetActive(false);
-          
+            elevatorSwitchbtn.SetActive(false);
+            elevatorswitchtxt.SetActive(false);
         }
     }
 }

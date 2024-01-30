@@ -59,8 +59,6 @@ public class MorgueDoor : MonoBehaviour
             isReach = true;
             MorgueDoorText.SetActive(true);
             buttonOpenMorgueDoor.SetActive(true);
-
-
         }
     }
 
@@ -85,8 +83,6 @@ public class MorgueDoor : MonoBehaviour
         morgue.SetBool("Open", true);
         morgue.SetBool("Close", false);
         MorgueDoorIsOpen = true;
-
-
     }
 
     public void CloseMortuaryChamber()
