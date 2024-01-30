@@ -8,27 +8,45 @@ public class Elevator : MonoBehaviour
     private bool elevatorDoorIsOpen;
     private Animator elevator;
 
+    public AudioManager elevatorOpensound;
+    public AudioManager elevatorDownsound; 
     private void Start()
     {
-      //  isReach = false;
+        //isReach = false;
+        
         elevatorDoorIsOpen = false;
-        // audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         //audioSource.clip = morgueDoorsound;
         elevator = GetComponent<Animator>();
-        
+        StartCoroutine(MoveElevatorAndOpen());
     }
-    
+    private IEnumerator MoveElevatorAndOpen()
+    {
+        DownElevator();
+        yield return new WaitForSeconds(10f); // Adjust the delay as needed
+        OpenElevator();
+        yield return new WaitForSeconds(5f);
+        CloseElevator();
+    }
+    private void DownElevator()
+    {
+        elevatorDownsound.PlaySound();
+        elevator.SetBool("Down", true);
+    }
+
+
     public void OpenElevator()
     {
-        //PlayMorgueDoorSound();
+        elevatorOpensound.PlaySound();
         elevator.SetBool("Open", true);
         elevator.SetBool("Close", false);
+        elevator.SetBool("Down", false );
         elevatorDoorIsOpen = true;
     }
 
     public void CloseElevator()
     {
-        //PlayMorgueDoorSound();
+        elevatorOpensound.PlaySound();
         elevator.SetBool("Open", false);
         elevator.SetBool("Close", true);
         elevatorDoorIsOpen = false;
