@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 299a9a1f92fcf0045b32f9f820475d25
+timeCreated: 1454595885
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 55344
+  packageName: Untitled
+  packageVersion: 1.0
+  assetPath: Assets/water_tank/Materials/barrel_water.mat
+  uploadId: 101552
