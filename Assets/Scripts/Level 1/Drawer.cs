@@ -38,7 +38,7 @@ public class Drawer : MonoBehaviour
             if (drawerIsOpen)
             {
                 buttonCloseDrawer.SetActive(true);
-               
+                drawerText.SetActive(false);
             }
             else
             {
@@ -60,8 +60,6 @@ public class Drawer : MonoBehaviour
             isReach = true;
             drawerText.SetActive(true);
             buttonOpenDrawer.SetActive(true);
-           
-
         }
     }
 
