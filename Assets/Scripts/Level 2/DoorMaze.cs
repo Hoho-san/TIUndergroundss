@@ -1,15 +1,20 @@
 using System.Collections;
 using UnityEngine;
-
-
 public class DoorMaze : MonoBehaviour
 {
     public GameObject buttonOpenDoor;
-   
+    public GameObject buttonLockDoor;
+    public GameObject keyInventory;
+    public GameObject AntidoteInventory;
+
     private bool isReach;
     private bool doorIsOpen;
+    private bool hasKey;
+    private bool hasAntidote;
 
     public GameObject doorText;
+    public GameObject needkeyText;
+    public GameObject needAntidoteText;
     public GameObject LevelFinishedText;
 
     private Animator door;
@@ -22,6 +27,8 @@ public class DoorMaze : MonoBehaviour
     {
         isReach = false;
         doorIsOpen = false;
+        hasKey = false;
+        hasAntidote = false;
         door = GetComponent<Animator>();
         doorOpening = false;
         sceneManager.Save_and_Exit();
@@ -29,7 +36,32 @@ public class DoorMaze : MonoBehaviour
 
     private void Update()
     {
+
+        if (keyInventory.activeInHierarchy)
+        {
+            hasKey = true;
+        }
+        else
+        {
+            hasKey = false;
+        }
+
+        if (AntidoteInventory.activeInHierarchy)
+        {
+            hasAntidote = true;
+        }
+        else
+        {
+            hasAntidote = false;
+        }
+
+        if (isReach && hasKey && hasAntidote && !doorIsOpen)
+        {
+            buttonOpenDoor.SetActive(true);
+        }
+
         gameManager.UpdateTimerDisplay();
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,9 +71,13 @@ public class DoorMaze : MonoBehaviour
             isReach = true;
             doorText.SetActive(true);
 
-            if (!doorIsOpen)
+            if (hasKey && hasAntidote)
             {
                 buttonOpenDoor.SetActive(true);
+            }
+            else
+            {
+                buttonLockDoor.SetActive(true);
                 gameManager.StartTimer();
             }
         }
@@ -77,15 +113,6 @@ public class DoorMaze : MonoBehaviour
         gameManager.LoadNextLevel();
        
     }
-
-    public void CloseDoor()
-    {
-        door.SetBool("Open", false);
-        door.SetBool("Close", true);
-        doorIsOpen = false;
-    }
-
- 
     private void Levelfinished()
     {
         gameManager.timerText.gameObject.SetActive(false);
