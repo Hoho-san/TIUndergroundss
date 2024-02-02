@@ -13,6 +13,8 @@ public class DoorMaze : MonoBehaviour
     private bool hasAntidote;
 
     public GameObject doorText;
+    public GameObject antidoteText;
+    public GameObject doorLockText;
     public GameObject needkeyText;
     public GameObject needAntidoteText;
     public GameObject LevelFinishedText;
@@ -36,30 +38,8 @@ public class DoorMaze : MonoBehaviour
 
     private void Update()
     {
-
-        if (keyInventory.activeInHierarchy)
-        {
-            hasKey = true;
-        }
-        else
-        {
-            hasKey = false;
-        }
-
-        if (AntidoteInventory.activeInHierarchy)
-        {
-            hasAntidote = true;
-        }
-        else
-        {
-            hasAntidote = false;
-        }
-
-        if (isReach && hasKey && hasAntidote && !doorIsOpen)
-        {
-            buttonOpenDoor.SetActive(true);
-        }
-
+        hasKey = keyInventory.activeInHierarchy; // bool value
+        hasAntidote = AntidoteInventory.activeInHierarchy; // bool value
         gameManager.UpdateTimerDisplay();
        
     }
@@ -74,6 +54,16 @@ public class DoorMaze : MonoBehaviour
             if (hasKey && hasAntidote)
             {
                 buttonOpenDoor.SetActive(true);
+            }
+            else if (hasKey && !hasAntidote)
+            {
+                doorText.SetActive(false);
+                needAntidoteText.SetActive(true);   
+            }
+            else if (!hasKey && hasAntidote)
+            {
+                doorText.SetActive(false);
+                needkeyText.SetActive(true);
             }
             else
             {
@@ -90,6 +80,11 @@ public class DoorMaze : MonoBehaviour
             isReach = false;
             buttonOpenDoor.SetActive(false);
             doorText.SetActive(false);
+            buttonLockDoor.SetActive(false);
+            needkeyText.SetActive(false);
+            needAntidoteText.SetActive(false);
+            doorLockText.SetActive(false);
+            antidoteText.SetActive(false);
         }
     }
 
@@ -98,27 +93,31 @@ public class DoorMaze : MonoBehaviour
         Levelfinished();
         if (!doorOpening)
         {
-            StartCoroutine(LoadLevelAfterDelay(3f));
             door.SetBool("Open", true);
             door.SetBool("Close", false);
             doorIsOpen = true;
             gameManager.StopTimer();
             doorOpening = true;
         }
+        StartCoroutine(LoadLevelAfterDelay(3f));
+    }
+
+    public void DoorLocked()
+    {
+        doorLockText.SetActive(true);
+        doorText.SetActive(false);
+        gameManager.StartTimer();
     }
 
     IEnumerator LoadLevelAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         gameManager.LoadNextLevel();
-       
     }
     private void Levelfinished()
     {
         gameManager.timerText.gameObject.SetActive(false);
         LevelFinishedText.SetActive(true);
-        gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
-       
     }
 }
