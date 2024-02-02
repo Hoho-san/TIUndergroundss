@@ -2295,7 +2295,7 @@ GameObject:
   - component: {fileID: 1266017567}
   - component: {fileID: 1266017568}
   m_Layer: 0
-  m_Name: Sound_Ambiance
+  m_Name: Sound_MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2326,8 +2326,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b0a0209e161c35549bb610e10f2f1e05, type: 3}
-  m_Resource: {fileID: 8300000, guid: b0a0209e161c35549bb610e10f2f1e05, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d66d7edeb40454d40a8ab46ce1b77fe9, type: 3}
+  m_Resource: {fileID: 8300000, guid: d66d7edeb40454d40a8ab46ce1b77fe9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2838,7 +2838,9 @@ MonoBehaviour:
   gameOverUI: {fileID: 0}
   HUD: {fileID: 0}
   buttons: {fileID: 0}
+  setting: {fileID: 0}
   keypadpanel: {fileID: 0}
+  binderpanel: {fileID: 0}
   joystick: {fileID: 0}
   timerDuration: 180
   timerText: {fileID: 0}

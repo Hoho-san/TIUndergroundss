@@ -5,7 +5,6 @@ using UnityEngine;
 public class Keypad : MonoBehaviour
 {
     public GameObject KeypadButton;
-
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;

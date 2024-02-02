@@ -9,8 +9,10 @@ public class GameManagerScript : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject HUD;
     public GameObject buttons;
+    public GameObject setting;
     public GameObject keypadpanel;
-  
+    public GameObject binderpanel;
+
     public GameObject joystick;
 
     public float timerDuration = 180f; // 3 minutes timer
@@ -50,18 +52,17 @@ public class GameManagerScript : MonoBehaviour
                 gameOver();
             }
         }
-
-
     }
 
     public void gameOver()
     {
-
         gameOverUI.SetActive(true);
         HUD.SetActive(false);
         buttons.SetActive(false);
-        keypadpanel.SetActive(false);
+        setting.SetActive(false);
         joystick.SetActive(false);
+        keypadpanel.SetActive(false);
+        binderpanel.SetActive(false);
         controller.StopPlayer();
         Debug.Log("Game Over: Time's up!");
     }
@@ -115,7 +116,6 @@ public class GameManagerScript : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(timer / 60f);
         int seconds = Mathf.FloorToInt(timer % 60f);
-
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

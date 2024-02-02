@@ -4753,7 +4753,9 @@ MonoBehaviour:
   gameOverUI: {fileID: 194558128}
   HUD: {fileID: 1311897864}
   buttons: {fileID: 133520333}
+  setting: {fileID: 1476648765}
   keypadpanel: {fileID: 1831558602}
+  binderpanel: {fileID: 2114101998}
   joystick: {fileID: 177868424}
   timerDuration: 180
   timerText: {fileID: 1934303681}
