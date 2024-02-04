@@ -8,6 +8,7 @@ public class PickAntidote : MonoBehaviour
     public GameObject AntidoteInventory;
     public GameObject AntidoteButton;
     public GameObject AntidoteText;
+    public GameObject AntidoteScreen;
 
     public bool isReach;
 
@@ -46,5 +47,6 @@ public class PickAntidote : MonoBehaviour
         AntidoteInventory.SetActive(true);
         AntidoteButton.SetActive(false);
         AntidoteText.SetActive(false);
+        AntidoteScreen.SetActive(true);
     }
 }

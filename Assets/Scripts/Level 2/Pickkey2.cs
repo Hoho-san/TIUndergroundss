@@ -8,6 +8,8 @@ public class Pickkey2 : MonoBehaviour
     public GameObject keyInventory;
     public GameObject keyButton;
     public GameObject keyText;
+    public GameObject keyScreen;
+
 
     public bool isReach;
     public Drawer2 drawerScript; // Reference to the Drawer script
@@ -46,5 +48,6 @@ public class Pickkey2 : MonoBehaviour
         keyInventory.SetActive(true);
         keyButton.SetActive(false);
         keyText.SetActive(false);
+        keyScreen.SetActive(true);
     }
 }
