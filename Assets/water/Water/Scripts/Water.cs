@@ -120,21 +120,27 @@ namespace UnityStandardAssets.Water
             {
                 refractionCamera.worldToCameraMatrix = cam.worldToCameraMatrix;
 
-                // Setup oblique projection matrix so that near plane is our reflection
-                // plane. This way we clip everything below/above it for free.
+                // Setup oblique projection matrix so that the near plane is our reflection plane.
                 Vector4 clipPlane = CameraSpacePlane(refractionCamera, pos, normal, -1.0f);
-                refractionCamera.projectionMatrix = cam.CalculateObliqueMatrix(clipPlane);
+                Matrix4x4 projectionMatrix = cam.projectionMatrix;
+                projectionMatrix = cam.CalculateObliqueMatrix(clipPlane) * projectionMatrix;
 
-				// Set custom culling matrix from the current camera
-				refractionCamera.cullingMatrix = cam.projectionMatrix * cam.worldToCameraMatrix;
+                // Set custom culling matrix from the current camera
+                refractionCamera.cullingMatrix = projectionMatrix * cam.worldToCameraMatrix;
 
-				refractionCamera.cullingMask = ~(1 << 4) & refractLayers.value; // never render water layer
+                refractionCamera.cullingMask = ~(1 << 4) & refractLayers.value; // never render water layer
                 refractionCamera.targetTexture = m_RefractionTexture;
                 refractionCamera.transform.position = cam.transform.position;
                 refractionCamera.transform.rotation = cam.transform.rotation;
+
+                // Debug statements
+                Debug.Log("Clip Plane: " + clipPlane);
+                Debug.Log("Oblique Matrix: " + projectionMatrix);
+
                 refractionCamera.Render();
                 GetComponent<Renderer>().sharedMaterial.SetTexture("_RefractionTex", m_RefractionTexture);
             }
+
 
             // Restore pixel light count
             if (disablePixelLights)
