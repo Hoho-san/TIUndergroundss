@@ -6897,10 +6897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802ba1f08f2b4104d8a22d8d5ef20d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 327388676}
   HUD: {fileID: 1311897864}
   buttons: {fileID: 133520333}
-  setting: {fileID: 0}
+  setting: {fileID: 419584750}
   keypadpanel: {fileID: 1605777694}
   binderpanel: {fileID: 24513932}
   joystick: {fileID: 1798941682}

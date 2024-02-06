@@ -8,7 +8,8 @@ using Unity.VisualScripting;
 public class KeypadPanel : MonoBehaviour
 {
     [SerializeField] private TMP_Text Ans;
-    private string Answer = "12345";
+    private string Answer = "2529"; // pin code
+
     public GameObject Keypad;
     public GameObject Door;
 
@@ -40,12 +41,13 @@ public class KeypadPanel : MonoBehaviour
     {
         if (Ans.text == Answer)
         {
-            Ans.text = "Unlocked";
+            Ans.text = "Door Unlocked";
             DoorLock3.OpenDoor();
             DoorLock3.StopFunctionality();
             deactivatekeypad.StopFunctionality();
             doorAudio.PlaySound();
             Entrancewall.SetActive(true);
+
         }
         else
         {

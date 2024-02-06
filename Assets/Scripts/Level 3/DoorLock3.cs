@@ -11,6 +11,7 @@ public class DoorLock3 : MonoBehaviour
     public GameObject doorText;
     public GameObject LevelFinishedText;
 
+
     private Animator door;
     private bool doorOpening;
 
@@ -65,7 +66,7 @@ public class DoorLock3 : MonoBehaviour
        // Levelfinished();
         if (!doorOpening)
         {
-            StartCoroutine(LoadLevelAfterDelay(3f));
+            StartCoroutine(LoadLevelAfterDelay(5f));
             door.SetBool("Open", true);
             door.SetBool("Close", false);
             doorIsOpen = true;
