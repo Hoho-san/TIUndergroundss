@@ -14,6 +14,9 @@ public class ImageCompleted : MonoBehaviour
 
     public GameObject LevelFinishedText;
     public GameManagerScript gameManager;
+    public CompressWall Wall;
+    public DoorOpen Door;
+
 
 
     public bool IspostedPic1, IspostedPic2, IspostedPic3, IspostedPic4, IspostedPic5, IspostedPic6;
@@ -35,14 +38,27 @@ public class ImageCompleted : MonoBehaviour
         PuzzleIsCompleted();
 
     }
-
     private void PuzzleIsCompleted()
     {
         if (IspostedPic1 && IspostedPic2 && IspostedPic3 && IspostedPic4 && IspostedPic5 && IspostedPic6)
-        {   
+        {
             gameManager.StopTimer();
-            Levelfinished();
+            Wall.WallReversing();
+            StartCoroutine(DelayThenOpenDoor(3f));
         }
+    }
+
+    private IEnumerator DelayThenOpenDoor(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        Door.DoorOpening();
+        StartCoroutine(DelayThenFinishLevel(2f));
+    }
+
+    private IEnumerator DelayThenFinishLevel(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        Levelfinished();
     }
 
     private void Levelfinished()
@@ -52,4 +68,5 @@ public class ImageCompleted : MonoBehaviour
         gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
     }
+
 }

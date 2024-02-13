@@ -14,4 +14,10 @@ public class CompressWall : MonoBehaviour
     {
         compress.SetBool("Shrink", true);
     }
+
+    public void WallReversing()
+    { 
+        compress.SetBool("Shrink", false);
+        compress.SetBool("TaskDone", true);
+    }
 }
