@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickImagePiece : MonoBehaviour
+public class PickImagePiece2 : MonoBehaviour
 {
     public GameObject ImagePieceObject;
     public GameObject ImagePieceInventory;
     public GameObject ImagePieceButton;
     public GameObject ImagePieceText;
-
-    public MorgueDoor morgueDoor;
-    public MorgueBed morgueBed;
 
     public bool isReach;
 
@@ -25,11 +22,9 @@ public class PickImagePiece : MonoBehaviour
         if (other.gameObject.tag == "Reach")
         {
             isReach = true;
-            if (morgueDoor.MorgueDoorIsOpen || morgueBed.MorgueBedIsOpen)
-            {
-                ImagePieceButton.SetActive(true);
-                ImagePieceText.SetActive(true);
-            }
+            ImagePieceButton.SetActive(true);
+            ImagePieceText.SetActive(true);
+            
         }
     }
 
@@ -46,7 +41,7 @@ public class PickImagePiece : MonoBehaviour
 
     public void PickthisImagePiece()
     {
-     
+
         ImagePieceObject.SetActive(false);
         ImagePieceInventory.SetActive(true);
         ImagePieceButton.SetActive(false);

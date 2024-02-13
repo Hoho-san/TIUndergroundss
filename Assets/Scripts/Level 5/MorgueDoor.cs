@@ -11,16 +11,13 @@ public class MorgueDoor : MonoBehaviour
     private AudioSource audioSource;
 
     private bool isReach;
-    private bool MorgueDoorIsOpen;
+    public bool MorgueDoorIsOpen;
 
     public GameObject MorgueDoorText;
+   // public MorgueBed morgueBed;
 
     private Animator morgue;
 
-   // public GameObject pickKeyButton;
-   // public PickKey pickKeyScript; // Reference to the PickKey script
-
-    private float pushForce = 10f;
     private void Start()
     {
         isReach = false;
@@ -37,17 +34,10 @@ public class MorgueDoor : MonoBehaviour
             if (MorgueDoorIsOpen)
             {
                 buttonCloseMorgueDoor.SetActive(true);
-
             }
             else
             {
                 buttonCloseMorgueDoor.SetActive(false);
-
-               /* if (pickKeyScript != null)
-                {
-                    pickKeyButton.SetActive(false);
-                    pickKeyScript.keyText.SetActive(false);
-                }*/
             }
         }
     }
@@ -70,10 +60,6 @@ public class MorgueDoor : MonoBehaviour
             buttonOpenMorgueDoor.SetActive(false);
             buttonCloseMorgueDoor.SetActive(false);
             MorgueDoorText.SetActive(false);
-         /*   if (pickKeyScript != null)
-            {
-                pickKeyButton.SetActive(false);
-            }*/
         }
     }
 
@@ -92,11 +78,6 @@ public class MorgueDoor : MonoBehaviour
         morgue.SetBool("Close", true);
         buttonCloseMorgueDoor.SetActive(false);
         MorgueDoorIsOpen = false;
-
-        /*if (pickKeyScript != null)
-        {
-            pickKeyButton.SetActive(false);
-        }*/
     }
 
     private void PlayMorgueDoorSound()
@@ -106,18 +87,5 @@ public class MorgueDoor : MonoBehaviour
             audioSource.PlayOneShot(morgueDoorsound);
         }
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            Rigidbody playerRigidbody = collision.collider.GetComponent<Rigidbody>();
-
-            if (playerRigidbody != null)
-            {
-                Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
-                playerRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
-            }
-        }
-    }
-
+   
 }
