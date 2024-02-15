@@ -2848,6 +2848,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   sceneManager: {fileID: 1118056574}
   dot: {fileID: 1657288024}
+  Sounds: {fileID: 0}
 --- !u!4 &1567223787
 Transform:
   m_ObjectHideFlags: 0
