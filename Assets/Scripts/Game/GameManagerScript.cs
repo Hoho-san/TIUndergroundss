@@ -12,7 +12,6 @@ public class GameManagerScript : MonoBehaviour
     public GameObject setting;
     public GameObject keypadpanel;
     public GameObject binderpanel;
-
     public GameObject joystick;
 
     public float timerDuration = 180f; // 3 minutes timer
@@ -24,6 +23,7 @@ public class GameManagerScript : MonoBehaviour
     public Scene_Manager sceneManager;
 
     public GameObject dot;
+    public GameObject Sounds;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +63,7 @@ public class GameManagerScript : MonoBehaviour
         joystick.SetActive(false);
         keypadpanel.SetActive(false);
         binderpanel.SetActive(false);
+        Sounds.SetActive(false);
         controller.StopPlayer();
         Debug.Log("Game Over: Time's up!");
     }

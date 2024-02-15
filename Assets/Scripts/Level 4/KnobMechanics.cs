@@ -19,11 +19,18 @@ public class KnobMechanics : MonoBehaviour
     public GameManagerScript gameManager;
     public Scene_Manager sceneManager;
 
+    public GameObject waterSound;
+
+    public ParticleController particleController;
+    public WaterRise waterRise;
+
     private bool isReach;
 
     void Start()
     {
         sceneManager.Save_and_Exit();
+        waterSound.SetActive(false);
+        particleController.StopWaterParticles();
     }
 
     
@@ -38,6 +45,9 @@ public class KnobMechanics : MonoBehaviour
         {
             isReach = true;
             gameManager.StartTimer();
+            waterRise.WaterRising();
+            waterSound.SetActive(true);
+            particleController.PlayWaterPaticles();
         }
     }
 
@@ -46,8 +56,12 @@ public class KnobMechanics : MonoBehaviour
         if (Knob1.IsKnobOn && !Knob2.IsKnobOn && !Knob3.IsKnobOn && Knob4.IsKnobOn && Knob5.IsKnobOn && !Knob6.IsKnobOn)
         {
             gameManager.StopTimer();
-            lights.LightsOff();
+            waterRise.WaterDraining();
+            particleController.StopWaterParticles();
+            waterSound.SetActive(false);
+           // lights.LightsOff();
             Levelfinished();
+            StartCoroutine(LoadLevelAfterDelay(3f));
         }
     }
 
@@ -58,5 +72,11 @@ public class KnobMechanics : MonoBehaviour
         LevelFinishedText.SetActive(true);
         gameManager.timerText.gameObject.SetActive(false);
         Debug.Log("Level Done");
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameManager.LoadNextLevel();
     }
 }

@@ -4520,6 +4520,7 @@ MonoBehaviour:
   controller: {fileID: 498816356}
   sceneManager: {fileID: 1358147051}
   dot: {fileID: 1429788094}
+  Sounds: {fileID: 1405304993}
 --- !u!4 &416815545
 Transform:
   m_ObjectHideFlags: 0
@@ -16700,7 +16701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1405304994
 Transform:
   m_ObjectHideFlags: 0

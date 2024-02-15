@@ -11,6 +11,7 @@ public class ElevatorSwitch : MonoBehaviour
     private bool doorIsOpen;
     public GameManagerScript gameManager;
     public CompressWall compressWall;
+    public GameObject wallSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +24,7 @@ public class ElevatorSwitch : MonoBehaviour
             {
                 gameManager.StartTimer();
                 compressWall.StartCompressing();
+                wallSound.SetActive(true);
             }
         }
     }

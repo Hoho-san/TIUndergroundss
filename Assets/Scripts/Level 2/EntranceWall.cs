@@ -8,6 +8,7 @@ public class EntranceWall : MonoBehaviour
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;
+    public AudioManager creepysound;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Reach")
@@ -16,6 +17,7 @@ public class EntranceWall : MonoBehaviour
             if (!doorIsOpen)
             {
                 gameManager.StartTimer();
+                creepysound.PlaySound();
             }
         }
     }

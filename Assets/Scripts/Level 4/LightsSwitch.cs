@@ -9,6 +9,7 @@ public class LightsSwitch : MonoBehaviour
     public GameObject Light3;
     public GameObject Light4;
     public GameObject Light5;
+    public GameObject Light6;
 
     public void LightsOff()
     {
@@ -17,6 +18,7 @@ public class LightsSwitch : MonoBehaviour
         Light3.SetActive(false);
         Light4.SetActive(false);
         Light5.SetActive(false);
+        Light6.SetActive(false);
     }
     public void LightsOn()
     {
@@ -25,5 +27,6 @@ public class LightsSwitch : MonoBehaviour
         Light3.SetActive(true);
         Light4.SetActive(true);
         Light5.SetActive(true);
+        Light6.SetActive(true);
     }
 }

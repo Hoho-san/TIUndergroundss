@@ -16,8 +16,8 @@ public class ImageCompleted : MonoBehaviour
     public GameManagerScript gameManager;
     public CompressWall Wall;
     public DoorOpen Door;
-
-
+    public GameObject wallSound;
+  
 
     public bool IspostedPic1, IspostedPic2, IspostedPic3, IspostedPic4, IspostedPic5, IspostedPic6;
 
@@ -44,6 +44,7 @@ public class ImageCompleted : MonoBehaviour
         {
             gameManager.StopTimer();
             Wall.WallReversing();
+            wallSound.SetActive(false);
             StartCoroutine(DelayThenOpenDoor(3f));
         }
     }

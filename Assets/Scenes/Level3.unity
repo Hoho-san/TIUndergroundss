@@ -4633,7 +4633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e799a80c47f94184385408ccf1275cb4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.282
+      value: 7.54
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e799a80c47f94184385408ccf1275cb4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5661,6 +5661,7 @@ MonoBehaviour:
   controller: {fileID: 1111212125}
   sceneManager: {fileID: 1045071598}
   dot: {fileID: 1462015485}
+  Sounds: {fileID: 856666009}
 --- !u!4 &416815545
 Transform:
   m_ObjectHideFlags: 0
@@ -25647,7 +25648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2a2be0575b3fcc941bc7f098ed5deafa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -88.021
+      value: -87.99
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2a2be0575b3fcc941bc7f098ed5deafa, type: 3}
       propertyPath: m_AnchoredPosition.y

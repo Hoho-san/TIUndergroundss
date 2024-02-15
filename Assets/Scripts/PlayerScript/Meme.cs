@@ -13,6 +13,7 @@ public class Meme : MonoBehaviour
         {
             isReach = true;
             audioManager.PlaySound();
+            Debug.Log("hello world");
         }
     }
 
