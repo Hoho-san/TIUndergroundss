@@ -196,7 +196,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 1047879038}
   - component: {fileID: 1047879040}
   - component: {fileID: 1047879039}
+  - component: {fileID: 1047879041}
   m_Layer: 5
   m_Name: Screen
   m_TagString: Untagged
@@ -455,6 +456,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047879037}
   m_CullTransparentMesh: 1
+--- !u!320 &1047879041
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047879037}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 55197f47d3bed7d4a964ddfec21985f0, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -3190785703494938157, guid: 55197f47d3bed7d4a964ddfec21985f0, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4038457660357849018, guid: 55197f47d3bed7d4a964ddfec21985f0, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1085959303
 GameObject:
   m_ObjectHideFlags: 0
