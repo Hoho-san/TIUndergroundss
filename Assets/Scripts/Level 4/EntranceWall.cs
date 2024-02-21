@@ -7,6 +7,7 @@ public class EntranceWall : MonoBehaviour
 {
     private bool isReach;
     private bool doorIsOpen;
+    public GameObject EntranceWallactive;
     public GameManagerScript gameManager;
     public AudioManager creepysound;
     private void OnTriggerEnter(Collider other)
@@ -19,6 +20,7 @@ public class EntranceWall : MonoBehaviour
                 gameManager.StartTimer();
                 creepysound.PlaySound();
             }
+            EntranceWallactive.SetActive(false);
         }
     }
 }

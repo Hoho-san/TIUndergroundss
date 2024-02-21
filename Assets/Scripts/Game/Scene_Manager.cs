@@ -18,7 +18,7 @@ public class Scene_Manager : MonoBehaviour
 
     public void new_game()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
        
     }
 
