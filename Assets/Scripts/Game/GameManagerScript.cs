@@ -2,6 +2,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -24,6 +26,9 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject dot;
     public GameObject Sounds;
+    public GameObject gameOverVid;
+    public GameObject gameOverVidPlayer;
+    public float viddelay = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +61,6 @@ public class GameManagerScript : MonoBehaviour
 
     public void gameOver()
     {
-        gameOverUI.SetActive(true);
         HUD.SetActive(false);
         buttons.SetActive(false);
         setting.SetActive(false);
@@ -65,8 +69,29 @@ public class GameManagerScript : MonoBehaviour
         binderpanel.SetActive(false);
         Sounds.SetActive(false);
         controller.StopPlayer();
+
+        gameOverVid.SetActive(true); // play video
+        gameOverVidPlayer.SetActive(true);
         Debug.Log("Game Over: Time's up!");
+
+        // Start the coroutine to play the game over video after a delay
+        StartCoroutine(ShowGameOverVideoWithDelay());
     }
+
+    IEnumerator ShowGameOverVideoWithDelay()
+    {
+        // Wait for a certain delay before showing the game over video
+        yield return new WaitForSeconds(viddelay); // Adjust the delay time as needed
+        PlayGameOverVideo();
+    }
+
+    public void PlayGameOverVideo()
+    {
+        gameOverUI.SetActive(true);
+        gameOverVid.SetActive(false);
+        gameOverVidPlayer.SetActive(false);
+    }
+
 
     public void restart()
     {
