@@ -4729,7 +4729,7 @@ MonoBehaviour:
   keypadpanel: {fileID: 1605777694}
   binderpanel: {fileID: 697564008}
   joystick: {fileID: 1798941682}
-  timerDuration: 5
+  timerDuration: 180
   timerText: {fileID: 1934303681}
   controller: {fileID: 498816356}
   sceneManager: {fileID: 1358147051}

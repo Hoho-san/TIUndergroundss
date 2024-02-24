@@ -5700,15 +5700,15 @@ MonoBehaviour:
   keypadpanel: {fileID: 1831558602}
   binderpanel: {fileID: 2114101998}
   joystick: {fileID: 177868424}
-  timerDuration: 180
+  timerDuration: 10
   timerText: {fileID: 1934303681}
   controller: {fileID: 1111212125}
   sceneManager: {fileID: 1045071598}
   dot: {fileID: 1462015485}
   Sounds: {fileID: 856666009}
-  gameOverVid: {fileID: 0}
-  gameOverVidPlayer: {fileID: 0}
-  viddelay: 5
+  gameOverVid: {fileID: 1822866881}
+  gameOverVidPlayer: {fileID: 1993464719}
+  viddelay: 15
 --- !u!4 &416815545
 Transform:
   m_ObjectHideFlags: 0
@@ -26757,7 +26757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: a4eb84fae8983fc4885db7b4906854f6, type: 2}
+  m_Texture: {fileID: 8400000, guid: 0426b6fafe646ea458f13954643bb5c0, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -29071,11 +29071,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993464719}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7c7fa0aac2bdbed42bddc1248b161bf0, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6c63ebe3b79068543ae91466693ec5d0, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: a4eb84fae8983fc4885db7b4906854f6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 0426b6fafe646ea458f13954643bb5c0, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>

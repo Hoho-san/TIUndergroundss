@@ -7291,7 +7291,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498816351}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: cac74e23f6c9e0f459e223aa806829f2, type: 2}
   m_Animations:
@@ -7334,7 +7334,7 @@ Transform:
   m_GameObject: {fileID: 498816351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 57.67, y: 1.329, z: -12}
+  m_LocalPosition: {x: 72.11, y: 1.329, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19386,7 +19386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: f6b487852f5ade4409bbaacbc01b2c48, type: 2}
+  m_Texture: {fileID: 8400000, guid: 6abe68bab7b4abc4e9d4a81838b58132, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -24311,11 +24311,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764456763}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: a25e69afeded0a04ebdbedc6ae71d745, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: f3512a6959e6ec04e89d170813d8176c, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: f6b487852f5ade4409bbaacbc01b2c48, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 6abe68bab7b4abc4e9d4a81838b58132, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -26033,6 +26033,7 @@ GameObject:
   - component: {fileID: 1899803192}
   - component: {fileID: 1899803191}
   - component: {fileID: 1899803190}
+  - component: {fileID: 1899803194}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -26132,6 +26133,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!320 &1899803194
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899803189}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: a9975071c5107f143ad8ff23dac3c2c8, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -575841304182336755, guid: a9975071c5107f143ad8ff23dac3c2c8, type: 2}
+    value: {fileID: 1355768765}
+  - key: {fileID: -7723243950125673062, guid: a9975071c5107f143ad8ff23dac3c2c8, type: 2}
+    value: {fileID: 1396936303}
+  - key: {fileID: 3934197127199775448, guid: a9975071c5107f143ad8ff23dac3c2c8, type: 2}
+    value: {fileID: 1764456763}
+  - key: {fileID: 2180116154835781235, guid: a9975071c5107f143ad8ff23dac3c2c8, type: 2}
+    value: {fileID: 498816351}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1904315815
 GameObject:
   m_ObjectHideFlags: 0
