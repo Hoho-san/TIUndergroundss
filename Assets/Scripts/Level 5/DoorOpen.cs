@@ -7,6 +7,7 @@ public class DoorOpen : MonoBehaviour
     private Animator door;
     public GameObject DoorSound;
     public float soundDelay = 0.5f; // Delay for the sound in seconds
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class DoorOpen : MonoBehaviour
     {
         door.SetBool("Open", true);
         StartCoroutine(ActivateDoorSoundWithDelay());
+        audioManager.PlaySound();
     }
 
     IEnumerator ActivateDoorSoundWithDelay()

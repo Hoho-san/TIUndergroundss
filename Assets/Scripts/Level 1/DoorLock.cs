@@ -51,7 +51,7 @@ public class DoorLock : MonoBehaviour
         {
             buttonOpenDoor.SetActive(true);
         }
-        gameManager.UpdateTimerDisplay();
+       // gameManager.UpdateTimerDisplay();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,7 +68,7 @@ public class DoorLock : MonoBehaviour
             else
             {
                 buttonLockDoor.SetActive(true);
-                gameManager.StartTimer();
+              //  gameManager.StartTimer();
             }
         }
     }
@@ -94,7 +94,7 @@ public class DoorLock : MonoBehaviour
             door.SetBool("Open", true);
             door.SetBool("Close", false);
             doorIsOpen = true;
-            gameManager.StopTimer();
+           // gameManager.StopTimer();
             doorOpening = true; // Set flag to prevent multiple door opening actions
         }
         StartCoroutine(LoadLevelAfterDelay(3f));
@@ -110,7 +110,7 @@ public class DoorLock : MonoBehaviour
     {
         doorLockText.SetActive(true);
         doorText.SetActive(false);
-        gameManager.StartTimer();
+      //  gameManager.StartTimer();
     }
 
     private void Levelfinished()
