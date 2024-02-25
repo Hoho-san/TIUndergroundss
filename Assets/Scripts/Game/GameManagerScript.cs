@@ -101,7 +101,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void mainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         controller.ContPlayer();
     }
     public void QuitGame()
