@@ -14,7 +14,7 @@ public class ImageCompleted : MonoBehaviour
 
     public GameObject LevelFinishedText;
     public GameManagerScript gameManager;
-    public CompressWall Wall;
+    public LaserMove Wall;
     public DoorOpen Door;
     public GameObject wallSound;
   

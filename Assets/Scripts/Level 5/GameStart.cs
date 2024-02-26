@@ -7,7 +7,7 @@ public class GameStart : MonoBehaviour
     private bool isReach;
     private bool doorIsOpen;
     public GameManagerScript gameManager;
-    public CompressWall compressWall;
+    public LaserMove compressWall;
     public GameObject wallSound;
 
     private void OnTriggerEnter(Collider other)
