@@ -12,18 +12,16 @@ public class CompressionController : MonoBehaviour
         transform.Translate(movementDirection * compressionSpeed * Time.deltaTime);
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         // Check if the colliding object is the player
         if (collision.gameObject.CompareTag("Player"))
         {
-            Rigidbody playerRigidbody = collision.rigidbody;
-
             // Calculate the push direction away from the wall
             Vector3 pushDirection = -movementDirection.normalized;
 
             // Apply force to the player to push them away from the wall
-            playerRigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+            collision.rigidbody.AddForce(pushDirection * pushForce, ForceMode.Impulse);
         }
     }
 }
