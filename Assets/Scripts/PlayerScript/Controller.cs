@@ -9,9 +9,9 @@ public class Controller : MonoBehaviour
 
     public CharacterController characterController;
 
-    [Header("Gravity & Jumping")]
-    public float stickToGroundForce = 10;
-    public float gravity = 10;
+    //[Header("Gravity & Jumping")]
+    //public float stickToGroundForce = 10;
+    //public float gravity = 10;
 
     private float verticalVelocity;
 
@@ -161,12 +161,12 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    //private void FixedUpdate()
 
-    {
-        grounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayers);
+    //{
+    //    grounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayers);
 
-    }
+    //}
 
 
     void LookAround()
@@ -192,15 +192,15 @@ public class Controller : MonoBehaviour
         // Move the character controller
         characterController.Move(movementDirection * moveSpeed * Time.deltaTime);
 
-        // Apply gravity
-        if (grounded && verticalVelocity <= 0)
-        {
-            verticalVelocity = -stickToGroundForce * Time.deltaTime;
-        }
-        else
-        {
-            verticalVelocity -= gravity * Time.deltaTime;
-        }
+        //// Apply gravity
+        //if (grounded && verticalVelocity <= 0)
+        //{
+        //    verticalVelocity = -stickToGroundForce * Time.deltaTime;
+        //}
+        //else
+        //{
+        //    verticalVelocity -= gravity * Time.deltaTime;
+        //}
 
         // Apply vertical movement
         Vector3 verticalMovement = transform.up * verticalVelocity;
