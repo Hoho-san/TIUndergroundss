@@ -25,8 +25,7 @@ public class Elevator : MonoBehaviour
         DownElevator();
         yield return new WaitForSeconds(10f); // Adjust the delay as needed
         OpenElevator();
-        yield return new WaitForSeconds(5f);
-        CloseElevator();
+       
     }
     private void DownElevator()
     {
@@ -49,10 +48,5 @@ public class Elevator : MonoBehaviour
         elevator.SetBool("Open", false);
         elevator.SetBool("Close", true);
         elevatorDoorIsOpen = false;
-
-        /*if (pickKeyScript != null)
-        {
-            pickKeyButton.SetActive(false);
-        }*/
     }
 }

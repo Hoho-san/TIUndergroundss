@@ -5,24 +5,17 @@ using UnityEngine;
 
 public class LaserMove : MonoBehaviour
 {
-    private Animator compress;
+    private Animator Laser;
     public GameManagerScript gameManager;  
 
     void Start()
     {
-        compress = GetComponent<Animator>();
-       
+        Laser = GetComponent<Animator>();
     }
 
     public void StartCompressing()
     {
-        compress.SetBool("Shrink", true);
-    }
-
-    public void WallReversing()
-    {
-        compress.SetBool("Shrink", false);
-        compress.SetBool("TaskDone", true);
+        Laser.SetBool("Shrink", true);
     }
 
     private void OnTriggerEnter(Collider other)

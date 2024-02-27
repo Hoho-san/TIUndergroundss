@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ImageCompleted : MonoBehaviour
 {
-
     public GameObject postedPic1;
     public GameObject postedPic2;
     public GameObject postedPic3;
@@ -14,14 +13,14 @@ public class ImageCompleted : MonoBehaviour
 
     public GameObject LevelFinishedText;
     public GameManagerScript gameManager;
-    public LaserMove Wall;
     public DoorOpen Door;
     public GameObject wallSound;
-  
 
     public bool IspostedPic1, IspostedPic2, IspostedPic3, IspostedPic4, IspostedPic5, IspostedPic6;
 
     public Scene_Manager sceneManager;
+
+    public GameObject LaserWall; 
     void Start()
     {
         sceneManager.Save_and_Exit();
@@ -43,9 +42,9 @@ public class ImageCompleted : MonoBehaviour
         if (IspostedPic1 && IspostedPic2 && IspostedPic3 && IspostedPic4 && IspostedPic5 && IspostedPic6)
         {
             gameManager.StopTimer();
-            Wall.WallReversing();
+            LaserWall.SetActive(false);
             wallSound.SetActive(false);
-            StartCoroutine(DelayThenOpenDoor(3f));
+            StartCoroutine(DelayThenOpenDoor(2f));
         }
     }
 

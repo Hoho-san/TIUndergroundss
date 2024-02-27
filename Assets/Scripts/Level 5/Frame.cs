@@ -17,8 +17,7 @@ public class Frame : MonoBehaviour
 
     private bool isReach;
     private bool doorIsOpen;
-    public GameManagerScript gameManager;
-   
+ 
     private void Start()
     {
         isReach = false;
@@ -30,7 +29,6 @@ public class Frame : MonoBehaviour
         hasPic = PicInventory.activeInHierarchy; // bool value
         IspostedPic = postedPic.activeInHierarchy;
 
-
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -38,10 +36,6 @@ public class Frame : MonoBehaviour
         {
             isReach = true;
             frametext1.SetActive(true);
-            if (!doorIsOpen)
-            {
-                gameManager.StartTimer();
-            }
             if (hasPic)
             {
                 Debug.Log("has pic");
@@ -63,6 +57,4 @@ public class Frame : MonoBehaviour
             frametext2.SetActive(false);
         }
     }
-
-
 }

@@ -35,17 +35,10 @@ public class MorgueBed : MonoBehaviour
             if (MorgueBedIsOpen)
             {
                 buttonPushMorgueBed.SetActive(true);
-
             }
             else
             {
                 buttonPushMorgueBed.SetActive(false);
-
-                /* if (pickKeyScript != null)
-                 {
-                     pickKeyButton.SetActive(false);
-                     pickKeyScript.keyText.SetActive(false);
-                 }*/
             }
         }
     }
@@ -72,10 +65,6 @@ public class MorgueBed : MonoBehaviour
             buttonPullMorgueBed.SetActive(false);
             buttonPushMorgueBed.SetActive(false);
             MorgueBedText.SetActive(false);
-            /*   if (pickKeyScript != null)
-               {
-                   pickKeyButton.SetActive(false);
-               }*/
         }
     }
 
@@ -94,11 +83,6 @@ public class MorgueBed : MonoBehaviour
         morgue.SetBool("Hide", true);
         buttonPushMorgueBed.SetActive(false);
         MorgueBedIsOpen = false;
-
-        /*if (pickKeyScript != null)
-        {
-            pickKeyButton.SetActive(false);
-        }*/
     }
 
     //private void PlayMorgueDoorSound()

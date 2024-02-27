@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class GameStart : MonoBehaviour
 {
-    private bool isReach;
-    private bool doorIsOpen;
     public GameManagerScript gameManager;
-    public LaserMove compressWall;
-    public GameObject wallSound;
+    public LaserMove LaserWall;
+    public AudioManager LaserSound;
+    public GameObject GameStartOFF;
+    public Elevator Elevator;
+    public GameObject LaserOn;
+
+    public float delayTime = .5f; // Adjust delay time as needed
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Reach")
+        if (other.gameObject.tag == "Player")
         {
-            isReach = true;
-            if (!doorIsOpen)
-            {
-                gameManager.StartTimer();
-                compressWall.StartCompressing();
-                wallSound.SetActive(true);
-            }
+            StartCoroutine(StartGameSequence());
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Reach")
-        {
-            isReach = false;
-        }
+    IEnumerator StartGameSequence()
+    {   
+        LaserSound.PlaySound();
+        LaserOn.SetActive(true);
+        yield return new WaitForSeconds(delayTime); // Wait for specified delay time
+        gameManager.StartTimer();
+        LaserWall.StartCompressing();
+        GameStartOFF.SetActive(false);
+        Elevator.CloseElevator();
+
     }
 }

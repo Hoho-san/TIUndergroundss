@@ -13,7 +13,7 @@ public class MorgueDoor : MonoBehaviour
     private bool isReach;
     public bool MorgueDoorIsOpen;
 
-    public GameObject MorgueDoorText;
+    //public GameObject MorgueDoorText;
    // public MorgueBed morgueBed;
 
     private Animator morgue;
@@ -47,7 +47,7 @@ public class MorgueDoor : MonoBehaviour
         if (other.gameObject.tag == "Reach")
         {
             isReach = true;
-            MorgueDoorText.SetActive(true);
+            //MorgueDoorText.SetActive(true);
             buttonOpenMorgueDoor.SetActive(true);
         }
     }
@@ -59,7 +59,7 @@ public class MorgueDoor : MonoBehaviour
             isReach = false;
             buttonOpenMorgueDoor.SetActive(false);
             buttonCloseMorgueDoor.SetActive(false);
-            MorgueDoorText.SetActive(false);
+            //MorgueDoorText.SetActive(false);
         }
     }
 
