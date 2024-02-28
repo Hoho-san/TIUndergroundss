@@ -6764,9 +6764,9 @@ MonoBehaviour:
   sceneManager: {fileID: 1358147051}
   dot: {fileID: 394308755}
   Sounds: {fileID: 488127171}
-  gameOverVid: {fileID: 0}
-  gameOverVidPlayer: {fileID: 0}
-  viddelay: 5
+  gameOverVid: {fileID: 1899464240}
+  gameOverVidPlayer: {fileID: 1758296146}
+  viddelay: 15
 --- !u!4 &416815545
 Transform:
   m_ObjectHideFlags: 0
@@ -9565,6 +9565,87 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 65224830}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &603554136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603554140}
+  - component: {fileID: 603554139}
+  - component: {fileID: 603554138}
+  - component: {fileID: 603554141}
+  m_Layer: 0
+  m_Name: GameStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &603554138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603554136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4366218, y: 1.0595266, z: 0.9999999}
+  m_Center: {x: -0.1801338, y: -0.029763436, z: 2.3332638e-13}
+--- !u!33 &603554139
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603554136}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &603554140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603554136}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: 68.08, y: 3.31, z: -9.947481}
+  m_LocalScale: {x: 7.7261186, y: 5.9490223, z: 0.18020228}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &603554141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603554136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22b7ba255aa7b34784933e8b06ece33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 416815544}
+  GameStartOFF: {fileID: 603554136}
+  waterSound: {fileID: 842381122}
+  particleController: {fileID: 936612252}
+  waterRise: {fileID: 2042431428}
+  delayTime: 0.5
 --- !u!1 &614536796
 GameObject:
   m_ObjectHideFlags: 0
@@ -12530,7 +12611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &842381123
 Transform:
   m_ObjectHideFlags: 0
@@ -25145,11 +25226,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758296146}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7c7fa0aac2bdbed42bddc1248b161bf0, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 301148cd065f32e47a558596817c912b, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: a4eb84fae8983fc4885db7b4906854f6, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 4351461e0d70a3f409b8d6df43a226e7, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -26997,7 +27078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: a4eb84fae8983fc4885db7b4906854f6, type: 2}
+  m_Texture: {fileID: 8400000, guid: 4351461e0d70a3f409b8d6df43a226e7, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -28063,9 +28144,9 @@ MonoBehaviour:
   LevelFinishedText: {fileID: 1582002547}
   gameManager: {fileID: 416815544}
   sceneManager: {fileID: 1358147051}
-  waterSound: {fileID: 842381122}
   particleController: {fileID: 936612252}
   waterRise: {fileID: 2042431428}
+  waterSound: {fileID: 842381122}
 --- !u!114 &1962010286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30147,3 +30228,4 @@ SceneRoots:
   - {fileID: 416815545}
   - {fileID: 1358147052}
   - {fileID: 1899803193}
+  - {fileID: 603554140}

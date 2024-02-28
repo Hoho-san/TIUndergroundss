@@ -17,14 +17,15 @@ public class KnobMechanics : MonoBehaviour
 
     public GameObject LevelFinishedText;
     public GameManagerScript gameManager;
+
     public Scene_Manager sceneManager;
 
-    public GameObject waterSound;
+    private bool isReach;
 
     public ParticleController particleController;
     public WaterRise waterRise;
-
-    private bool isReach;
+   
+    public GameObject waterSound;
 
     void Start()
     {
@@ -33,24 +34,12 @@ public class KnobMechanics : MonoBehaviour
         particleController.StopWaterParticles();
     }
 
-    
     void Update()
     {
         CorrectCombination();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Reach")
-        {
-            isReach = true;
-            gameManager.StartTimer();
-            waterRise.WaterRising();
-            waterSound.SetActive(true);
-            particleController.PlayWaterPaticles();
-        }
-    }
-
+   
     private void CorrectCombination()
     {
         if (Knob1.IsKnobOn && !Knob2.IsKnobOn && !Knob3.IsKnobOn && Knob4.IsKnobOn && Knob5.IsKnobOn && !Knob6.IsKnobOn)

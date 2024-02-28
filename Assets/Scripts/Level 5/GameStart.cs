@@ -28,8 +28,7 @@ public class GameStart : MonoBehaviour
         yield return new WaitForSeconds(delayTime); // Wait for specified delay time
         gameManager.StartTimer();
         LaserWall.StartCompressing();
-        GameStartOFF.SetActive(false);
         Elevator.CloseElevator();
-
+        GameStartOFF.SetActive(false);
     }
 }

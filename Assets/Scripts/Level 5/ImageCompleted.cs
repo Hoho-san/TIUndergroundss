@@ -44,7 +44,7 @@ public class ImageCompleted : MonoBehaviour
             gameManager.StopTimer();
             LaserWall.SetActive(false);
             wallSound.SetActive(false);
-            StartCoroutine(DelayThenOpenDoor(2f));
+            StartCoroutine(DelayThenOpenDoor(1f));
         }
     }
 
@@ -52,7 +52,7 @@ public class ImageCompleted : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         Door.DoorOpening();
-        StartCoroutine(DelayThenFinishLevel(2f));
+        StartCoroutine(DelayThenFinishLevel(1f));
     }
 
     private IEnumerator DelayThenFinishLevel(float delayTime)
