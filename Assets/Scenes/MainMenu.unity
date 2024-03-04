@@ -3019,6 +3019,9 @@ MonoBehaviour:
   sceneManager: {fileID: 1118056574}
   dot: {fileID: 1657288024}
   Sounds: {fileID: 0}
+  gameOverVid: {fileID: 0}
+  gameOverVidPlayer: {fileID: 0}
+  viddelay: 5
 --- !u!4 &1567223787
 Transform:
   m_ObjectHideFlags: 0
@@ -4016,7 +4019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NEW GAME
+  m_text: START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c6cda027f36841a5d0de86612d61d, type: 2}
   m_sharedMaterial: {fileID: 1518221258492963461, guid: 2a5c6cda027f36841a5d0de86612d61d,
