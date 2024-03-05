@@ -8,15 +8,16 @@ public class PickPhone : MonoBehaviour
     public GameObject phoneText;
     public GameObject PhonePanel;
     public GameObject AnswercallText;
-
     public GameObject Callsound;
     public bool isReach;
 
+    public Animator doll;
 
     private void Start()
     {
         isReach = false;
-        Invoke("ActivateObject", 1f); // Invoke the method after 10 seconds
+        Invoke("ActivateObject", 43f); // Invoke the method after 10 seconds
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +28,8 @@ public class PickPhone : MonoBehaviour
             phoneButton.SetActive(true);
             phoneText.SetActive(true);
             AnswercallText.SetActive(false);
+            doll.SetBool("Look", true);
+            doll.SetBool("Lookback", false);
         }
     }
 
@@ -37,7 +40,8 @@ public class PickPhone : MonoBehaviour
             isReach = false;
             phoneButton.SetActive(false);
             phoneText.SetActive(false);
-
+            doll.SetBool("Look", false);
+            doll.SetBool("Lookback", true);
         }
     }
 
