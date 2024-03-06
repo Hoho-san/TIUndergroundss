@@ -22,6 +22,8 @@ public class Desk : MonoBehaviour
     public Filebinder filebinder; // Reference to the PickKey script
 
     private float pushForce = 10f;
+
+    public AudioManager Osuperman;
     private void Start()
     {
         isReach = false;
@@ -84,7 +86,7 @@ public class Desk : MonoBehaviour
         desk.SetBool("Open", true);
         desk.SetBool("Close", false);
         DeskIsOpen = true;
-
+        Osuperman.PlaySound();
     }
 
     public void CloseDrawer()
