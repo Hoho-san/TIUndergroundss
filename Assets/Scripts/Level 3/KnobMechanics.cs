@@ -27,6 +27,8 @@ public class KnobMechanics : MonoBehaviour
    
     public GameObject waterSound;
 
+    public GameObject KnobMechanicsText;
+
     void Start()
     {
         sceneManager.Save_and_Exit();
@@ -67,5 +69,23 @@ public class KnobMechanics : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         gameManager.LoadNextLevel();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Reach")
+        {
+            isReach = true;
+            KnobMechanicsText.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Reach")
+        {
+            isReach = true;
+            KnobMechanicsText.SetActive(false);
+        }
     }
 }
