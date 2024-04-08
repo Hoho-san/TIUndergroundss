@@ -8,7 +8,7 @@ public class PickPhone : MonoBehaviour
     public GameObject phoneText;
     public GameObject PhonePanel;
     public GameObject AnswercallText;
-    public GameObject Callsound;
+    
     public bool isReach;
 
     public Animator doll;
@@ -16,8 +16,6 @@ public class PickPhone : MonoBehaviour
     private void Start()
     {
         isReach = false;
-        Invoke("ActivateObject", 43f); // Invoke the method after 10 seconds
-       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,17 +49,4 @@ public class PickPhone : MonoBehaviour
         phoneText.SetActive(false);
         PhonePanel.SetActive(true);
     }
-
-    void ActivateObject()
-    {
-        if (Callsound != null)
-        {
-            Callsound.SetActive(true); // Activate the GameObject
-        }
-        else
-        {
-            Debug.LogError("Object to activate is not assigned!");
-        }
-    }
-
 }
