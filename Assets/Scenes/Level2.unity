@@ -860,7 +860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Restart
+  m_text: 'ulitin
 
 '
   m_isRightToLeft: 0
@@ -3224,7 +3224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You may find something in the drawer
+  m_text: hilahin ang aparador
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
@@ -3896,7 +3896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Read
+  m_text: basahin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -5255,7 +5255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Menu ng laro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -6404,7 +6404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Solve this problem
+  m_text: Sulusyunan mo itong agham na problema.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
@@ -6686,7 +6686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Password Hint
+  m_text: matematika
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
@@ -8071,7 +8071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Setting
+  m_text: Setting ng laro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
@@ -11088,9 +11088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Restart
-
-'
+  m_text: ulitin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -11761,7 +11759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: quit
+  m_text: sumuko
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -11973,7 +11971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skip
+  m_text: i-Skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -12737,8 +12735,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: -70}
-  m_SizeDelta: {x: 300, y: 130}
+  m_AnchoredPosition: {x: -330.435, y: -70}
+  m_SizeDelta: {x: 360.87, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &861804227
 MonoBehaviour:
@@ -14978,7 +14976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME OVER
+  m_text: namatay
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62cda8d73afba94e90366a73926f2b3, type: 2}
   m_sharedMaterial: {fileID: -8208624050825010459, guid: d62cda8d73afba94e90366a73926f2b3,
@@ -16815,8 +16813,8 @@ MonoBehaviour:
   groundCheckRadius: 0.1
   grounded: 1
   cameraTransform: {fileID: 1927413240}
-  cameraSensitivity: 10
-  moveSpeed: 3
+  cameraSensitivity: 3
+  moveSpeed: 2.5
   moveInputDeadZone: 10
 --- !u!143 &1111212126
 CharacterController:
@@ -17509,7 +17507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Menu ng laro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -17623,8 +17621,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 204.58}
-  m_SizeDelta: {x: 422.4978, y: 106.9164}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 204.58}
+  m_SizeDelta: {x: 515.351, y: 106.9164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1145546269
 MonoBehaviour:
@@ -17646,7 +17644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Task ?
+  m_text: 'layunin?
 
 '
   m_isRightToLeft: 0
@@ -17785,7 +17783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Keypad
+  m_text: 'pindutan
 
 '
   m_isRightToLeft: 0
@@ -20238,8 +20236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 0}
-  m_SizeDelta: {x: 69.27, y: 25}
+  m_AnchoredPosition: {x: 168.01721, y: 0}
+  m_SizeDelta: {x: 92.3601, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292630687
 MonoBehaviour:
@@ -20261,7 +20259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Task ?
+  m_text: 'layunin ?
 
 '
   m_isRightToLeft: 0
@@ -24205,7 +24203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 2 completed
+  m_text: pangalawang kwarto ay tapos na
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
@@ -25053,7 +25051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close
+  m_text: isara
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -26491,7 +26489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Door is Locked
+  m_text: naka-kandado ang pinto
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
@@ -27292,14 +27290,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'unlock the door using 4 pin code
-
-
-    there are math clues around the
-    room!
-
-
-'
+  m_text: "buksan ang pinto gamit ang apat na numero na kombinasyon\n\nMay mga tanda
+    sa paligid ng silid na pang-matematika! \n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
@@ -27782,7 +27774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Read
+  m_text: basahin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 811cace1df4953746bce526fb6ef7124, type: 2}
   m_sharedMaterial: {fileID: 7644080240914326568, guid: 811cace1df4953746bce526fb6ef7124,
@@ -28670,7 +28662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Open
+  m_text: 'Buksan
 
 '
   m_isRightToLeft: 0
@@ -31322,7 +31314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Door is locked, key passcode is in the right
+  m_text: naka-kandado ang pinto
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33e78bc3e736dc14da1b56147f4a785f, type: 2}
   m_sharedMaterial: {fileID: -3995133242912127266, guid: 33e78bc3e736dc14da1b56147f4a785f,
